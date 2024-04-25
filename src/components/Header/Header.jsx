@@ -28,6 +28,7 @@ import {
     TagIcon,
     UserGroupIcon,
 } from "@heroicons/react/24/solid";
+import { Link } from "react-router-dom";
 
 const navListMenuItems = [
     {
@@ -166,7 +167,40 @@ function NavList() {
             >
                 <ListItem className="flex items-center gap-2 py-2 pr-4">Home</ListItem>
             </Typography>
+            <Typography
+                as="a"
+                href="#"
+                variant="small"
+                color="blue-gray"
+                className="font-medium"
+            >
+                <ListItem className="flex items-center gap-2 py-2 pr-4">
+                    Art & Craft Items
+                </ListItem>
+            </Typography>
             <NavListMenu />
+            <Typography
+                as="a"
+                href="#"
+                variant="small"
+                color="blue-gray"
+                className="font-medium"
+            >
+                <ListItem className="flex items-center gap-2 py-2 pr-4">
+                    Add Craft Item
+                </ListItem>
+            </Typography>
+            <Typography
+                as="a"
+                href="#"
+                variant="small"
+                color="blue-gray"
+                className="font-medium"
+            >
+                <ListItem className="flex items-center gap-2 py-2 pr-4">
+                    My Art & Craft List
+                </ListItem>
+            </Typography>
             <Typography
                 as="a"
                 href="#"
@@ -208,12 +242,12 @@ const Header = () => {
                         <NavList />
                     </div>
                     <div className="hidden gap-2 lg:flex">
-                        <Button variant="text" size="sm" color="blue-gray">
+                        <Link to='/login'><Button variant="text" size="sm" color="blue-gray">
                             Log In
-                        </Button>
-                        <Button variant="gradient" size="sm">
-                            Sign In
-                        </Button>
+                        </Button></Link>
+                        <Link to='/signUp'><Button variant="gradient" size="sm">
+                            Sign Up
+                        </Button></Link>
                     </div>
                     <IconButton
                         variant="text"
@@ -231,12 +265,12 @@ const Header = () => {
                 <Collapse open={openNav}>
                     <NavList />
                     <div className="flex w-full flex-nowrap items-center gap-2 lg:hidden">
-                        <Button variant="outlined" size="sm" color="blue-gray" fullWidth>
+                        <Link to='/login'><Button variant="outlined" size="sm" color="blue-gray" fullWidth>
                             Log In
-                        </Button>
-                        <Button variant="gradient" size="sm" fullWidth>
-                            Sign In
-                        </Button>
+                        </Button></Link>
+                        <Link to='/signUp'><Button variant="gradient" size="sm" fullWidth>
+                            Sign Up
+                        </Button></Link>
                     </div>
                 </Collapse>
             </Navbar>
