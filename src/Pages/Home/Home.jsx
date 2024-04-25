@@ -1,8 +1,8 @@
 
 const Home = () => {
     return (
-        <div>
-            <h1>This is Home</h1>
+        <div className="max-w-screen-xl mx-auto px-4">
+            <h1 className="">This is Home</h1>
         </div>
     );
 };
