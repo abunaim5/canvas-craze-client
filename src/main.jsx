@@ -12,6 +12,7 @@ import Login from './Pages/Login/Login.jsx';
 import SignUp from './Pages/SignUp/SignUp.jsx';
 import AddCraftItem from './Pages/AddCraftItem/AddCraftItem.jsx';
 import AllArtAndCraft from './Pages/AllArtAndCraft/AllArtAndCraft.jsx';
+import ViewDetails from './Pages/ViewDetails/ViewDetails.jsx';
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
         path: '/allArtAndCraft',
         element: <AllArtAndCraft></AllArtAndCraft>,
         loader: () => fetch('http://localhost:5000/craftItems')
+      },
+      {
+        path: '/details',
+        element: <ViewDetails></ViewDetails>
       }
     ],
   },
