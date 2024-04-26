@@ -4,6 +4,13 @@ import CraftItemsCard from "../CraftItemsCard/CraftItemsCard";
 const CraftItems = () => {
     const craftItems = useLoaderData();
 
+    const handleViewDetails = id => {
+        fetch(`http://localhost:5000/craftItems/${id}`)
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+        })
+    }
     return (
         <div className="max-w-screen-xl mx-auto">
             <div>
@@ -14,6 +21,7 @@ const CraftItems = () => {
                     craftItems.map(craftItem => <CraftItemsCard
                         key={craftItem._id}
                         craftItem={craftItem}
+                        handleViewDetails={handleViewDetails}
                     ></CraftItemsCard>)
                 }
             </div>

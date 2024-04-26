@@ -7,8 +7,9 @@ import {
     Button,
 } from "@material-tailwind/react";
 import PropTypes from 'prop-types';
+import { Link } from "react-router-dom";
 
-const CraftItemsCard = ({craftItem}) => {
+const CraftItemsCard = ({craftItem, handleViewDetails}) => {
     const {_id, item_name, description, price, photo} = craftItem;
 
 
@@ -40,13 +41,14 @@ const CraftItemsCard = ({craftItem}) => {
                     </Typography>
                 </CardBody>
                 <CardFooter className="pt-0">
-                    <Button
+                    <Link to={`/details/${_id}`}><Button
+                        onClick={() => handleViewDetails(_id)}
                         ripple={false}
                         fullWidth={true}
                         className="bg-blue-gray-900/10 text-white font-lato shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100 rounded-none bg-[#a55e3f] glass"
                     >
                         View Details
-                    </Button>
+                    </Button></Link>
                 </CardFooter>
             </Card>
         </div>
@@ -55,6 +57,7 @@ const CraftItemsCard = ({craftItem}) => {
 
 CraftItemsCard.propTypes = {
     craftItem: PropTypes.object.isRequired,
+    handleViewDetails: PropTypes.func.isRequired
 }
 
 export default CraftItemsCard;
