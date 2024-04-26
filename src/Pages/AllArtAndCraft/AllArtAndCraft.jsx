@@ -1,5 +1,5 @@
 import { Button, Card, Typography } from "@material-tailwind/react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const TABLE_HEAD = ["", "Name", "Subcategory", "Status", "Price", ""];
 
@@ -33,6 +33,14 @@ const TABLE_HEAD = ["", "Name", "Subcategory", "Status", "Price", ""];
 
 const AllArtAndCraft = () => {
     const artAndCrafts = useLoaderData();
+
+    const handleViewDetails = id => {
+        fetch(`http://localhost:5000/craftItems/${id}`)
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+        })
+    }
 
     return (
         <div className="max-w-screen-xl mx-auto mt-28">
@@ -82,7 +90,7 @@ const AllArtAndCraft = () => {
                                     </Typography>
                                 </td>
                                 <td className="p-4">
-                                    <Button className="rounded-none" fullWidth>Details</Button>
+                                    <Link to={`/details/${_id}`}><Button onClick={() => handleViewDetails(_id)} className="rounded-none bg-[#a55e3f] glass" fullWidth>Details</Button></Link>
                                     {/* <Typography as="a" href="#" variant="small" color="blue-gray" className="font-medium">
                                         
                                     </Typography> */}

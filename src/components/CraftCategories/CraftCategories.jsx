@@ -34,7 +34,7 @@ const CraftCategories = () => {
                         Tania Andrew
                     </Typography>
                     <CardFooter className="pt-3">
-                        <Button className="rounded-none  glass" size="lg" fullWidth={true}>
+                        <Button className="rounded-none bg-[#a55e3f] glass" size="lg" fullWidth={true}>
                             View Details
                         </Button>
                     </CardFooter>

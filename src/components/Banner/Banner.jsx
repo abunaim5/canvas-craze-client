@@ -33,22 +33,22 @@ const Banner = () => {
                             <Typography
                                 variant="h1"
                                 color="white"
-                                className="mb-4 text-3xl md:text-4xl lg:text-5xl xl:text-7xl"
+                                className="mb-4 text-3xl md:text-4xl lg:text-5xl xl:text-7xl font-alegreya"
                             >
                                 Unleash Your Creativity!
                             </Typography>
                             <Typography
                                 variant="lead"
                                 color="white"
-                                className="mb-12 opacity-80"
+                                className="mb-12 opacity-80 font-lato"
                             >
                                  Explore a world of artistic possibilities with CanvasCraze. From premium canvases to vibrant paints, we have everything you need to bring your imagination to life.
                             </Typography>
                             <div className="flex justify-center gap-2">
-                                <Button className="rounded-none" size="lg" color="white">
+                                <Button className="rounded-none font-lato bg-[#a55e3f] glass text-white" size="lg" color="white">
                                     Explore
                                 </Button>
-                                <Button className="rounded-none" size="lg" color="white" variant="text">
+                                <Button className="rounded-none font-lato hover:glass" size="lg" color="white" variant="text">
                                     Gallery
                                 </Button>
                             </div>
@@ -66,22 +66,22 @@ const Banner = () => {
                             <Typography
                                 variant="h1"
                                 color="white"
-                                className="mb-4 text-3xl md:text-4xl lg:text-5xl xl:text-7xl"
+                                className="mb-4 text-3xl md:text-4xl lg:text-5xl xl:text-7xl font-alegreya"
                             >
                                 Elevate Your Artistry
                             </Typography>
                             <Typography
                                 variant="lead"
                                 color="white"
-                                className="mb-12 opacity-80"
+                                className="mb-12 opacity-80 font-lato"
                             >
                                  Elevate your artistic endeavors with CanvasCraze. Discover high-quality brushes, sketchbooks, and drawing tools designed to inspire and empower artists of all levels.
                             </Typography>
                             <div className="flex justify-center gap-2">
-                                <Button className="rounded-none" size="lg" color="white">
+                                <Button className="rounded-none font-lato bg-[#a55e3f] glass text-white" size="lg" color="white">
                                     Explore
                                 </Button>
-                                <Button className="rounded-none" size="lg" color="white" variant="text">
+                                <Button className="rounded-none font-lato hover:glass" size="lg" color="white" variant="text">
                                     Gallery
                                 </Button>
                             </div>
@@ -99,22 +99,22 @@ const Banner = () => {
                             <Typography
                                 variant="h1"
                                 color="white"
-                                className="mb-4 text-3xl md:text-4xl lg:text-5xl xl:text-7xl"
+                                className="mb-4 text-3xl md:text-4xl lg:text-5xl xl:text-7xl font-alegreya"
                             >
                                 Inspiration Awaits
                             </Typography>
                             <Typography
                                 variant="lead"
                                 color="white"
-                                className="mb-12 opacity-80"
+                                className="mb-12 opacity-80 font-lato"
                             >
                                   Dive into a realm of inspiration with CanvasCraze. Browse our curated collection of painting and drawing supplies, and embark on a journey of self-expression and creativity.
                             </Typography>
                             <div className="flex justify-center gap-2">
-                                <Button className="rounded-none" size="lg" color="white">
+                                <Button className="rounded-none font-lato bg-[#a55e3f] glass text-white" size="lg" color="white">
                                     Explore
                                 </Button>
-                                <Button className="rounded-none" size="lg" color="white" variant="text">
+                                <Button className="rounded-none font-lato hover:glass" size="lg" color="white" variant="text">
                                     Gallery
                                 </Button>
                             </div>

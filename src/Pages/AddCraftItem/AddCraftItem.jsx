@@ -57,7 +57,7 @@ const AddCraftItem = () => {
                     <Input {...register('description')} className="" variant="standard" label="Description" placeholder="Description" />
                 </div>
                 <div>
-                    <Button type="submit" className="rounded-none glass bg-purple-600" fullWidth>Add</Button>;
+                    <Button type="submit" className="rounded-none glass bg-[#a55e3f]" fullWidth>Add</Button>;
                 </div>
             </form>
         </div>

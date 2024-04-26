@@ -124,7 +124,7 @@ function NavListMenu() {
                 <MenuHandler>
                     <Typography as="div" variant="small" className="font-medium">
                         <ListItem
-                            className="flex items-center gap-2 py-2 pr-4 font-medium text-gray-900"
+                            className="flex items-center gap-2 py-2 pr-4 font-medium text-gray-900 font-lato rounded-none"
                             selected={isMenuOpen || isMobileMenuOpen}
                             onClick={() => setIsMobileMenuOpen((cur) => !cur)}
                         >
@@ -157,12 +157,12 @@ function NavListMenu() {
 
 function NavList() {
     const links = <>
-        <NavLink to='/'><ListItem className="flex items-center gap-2 py-2 pr-4 text-sm">Home</ListItem></NavLink>
-        <NavLink to='/allArtAndCraft'><ListItem className="flex items-center gap-2 py-2 pr-4 text-sm">All Art & Craft</ListItem></NavLink>
+        <NavLink to='/'><ListItem className="flex items-center gap-2 py-2 pr-4 text-sm font-lato rounded-none">Home</ListItem></NavLink>
+        <NavLink to='/allArtAndCraft'><ListItem className="flex items-center gap-2 py-2 pr-4 text-sm font-lato rounded-none">All Art & Craft</ListItem></NavLink>
         <NavListMenu />
-        <NavLink to='/addCraft'><ListItem className="flex items-center gap-2 py-2 pr-4 text-sm">Add Craft Item</ListItem></NavLink>
-        <NavLink><ListItem className="flex items-center gap-2 py-2 pr-4 text-sm">My Art & Craft List</ListItem></NavLink>
-        <NavLink><ListItem className="flex items-center gap-2 py-2 pr-4 text-sm">Contact Us</ListItem></NavLink>
+        <NavLink to='/addCraft'><ListItem className="flex items-center gap-2 py-2 pr-4 text-sm font-lato rounded-none">Add Craft Item</ListItem></NavLink>
+        <NavLink><ListItem className="flex items-center gap-2 py-2 pr-4 text-sm font-lato rounded-none">My Art & Craft List</ListItem></NavLink>
+        <NavLink><ListItem className="flex items-center gap-2 py-2 pr-4 text-sm font-lato rounded-none">Contact Us</ListItem></NavLink>
     </>
 
     return (
@@ -186,15 +186,15 @@ const Header = () => {
         <div>
             <Navbar className="mx-auto max-w-screen-xl px-4 py-2 bg-transparent shadow-none">
                 <div className="flex items-center justify-between text-blue-gray-900">
-                    <Link to='/'><h1 className="mr-4 cursor-pointer py-1.5 lg:ml-2 text-xl font-bold">CanvasCraze</h1></Link>
+                    <Link to='/'><h1 className="mr-4 cursor-pointer py-1.5 lg:ml-2 text-2xl font-bold text-[#a55e3f]">CanvasCraze</h1></Link>
                     <div className="hidden lg:block">
                         <NavList />
                     </div>
                     <div className="hidden gap-2 lg:flex">
-                        <Link to='/login'><Button className="rounded-none" variant="text" size="sm" color="blue-gray">
+                        <Link to='/login'><Button className="rounded-none font-lato hover:glass" variant="text" size="sm" color="blue-gray">
                             Log In
                         </Button></Link>
-                        <Link to='/signUp'><Button className="rounded-none" variant="gradient" size="sm">
+                        <Link to='/signUp'><Button className="rounded-none font-lato bg-[#a55e3f] glass"  size="sm">
                             Sign Up
                         </Button></Link>
                     </div>
