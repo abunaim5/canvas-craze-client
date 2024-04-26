@@ -28,7 +28,7 @@ import {
     TagIcon,
     UserGroupIcon,
 } from "@heroicons/react/24/solid";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const navListMenuItems = [
     {
@@ -156,62 +156,18 @@ function NavListMenu() {
 }
 
 function NavList() {
+    const links = <>
+        <NavLink to='/'><ListItem className="flex items-center gap-2 py-2 pr-4 text-sm">Home</ListItem></NavLink>
+        <NavLink><ListItem className="flex items-center gap-2 py-2 pr-4 text-sm">Art & Craft Items</ListItem></NavLink>
+        <NavListMenu />
+        <NavLink><ListItem className="flex items-center gap-2 py-2 pr-4 text-sm">Add Craft Item</ListItem></NavLink>
+        <NavLink><ListItem className="flex items-center gap-2 py-2 pr-4 text-sm">My Art & Craft List</ListItem></NavLink>
+        <NavLink><ListItem className="flex items-center gap-2 py-2 pr-4 text-sm">Contact Us</ListItem></NavLink>
+    </>
+
     return (
         <List className="mt-4 mb-6 p-0 lg:mt-0 lg:mb-0 lg:flex-row lg:p-1">
-            <Typography
-                as="a"
-                href="#"
-                variant="small"
-                color="blue-gray"
-                className="font-medium"
-            >
-                <ListItem className="flex items-center gap-2 py-2 pr-4">Home</ListItem>
-            </Typography>
-            <Typography
-                as="a"
-                href="#"
-                variant="small"
-                color="blue-gray"
-                className="font-medium"
-            >
-                <ListItem className="flex items-center gap-2 py-2 pr-4">
-                    Art & Craft Items
-                </ListItem>
-            </Typography>
-            <NavListMenu />
-            <Typography
-                as="a"
-                href="#"
-                variant="small"
-                color="blue-gray"
-                className="font-medium"
-            >
-                <ListItem className="flex items-center gap-2 py-2 pr-4">
-                    Add Craft Item
-                </ListItem>
-            </Typography>
-            <Typography
-                as="a"
-                href="#"
-                variant="small"
-                color="blue-gray"
-                className="font-medium"
-            >
-                <ListItem className="flex items-center gap-2 py-2 pr-4">
-                    My Art & Craft List
-                </ListItem>
-            </Typography>
-            <Typography
-                as="a"
-                href="#"
-                variant="small"
-                color="blue-gray"
-                className="font-medium"
-            >
-                <ListItem className="flex items-center gap-2 py-2 pr-4">
-                    Contact Us
-                </ListItem>
-            </Typography>
+            {links}
         </List>
     );
 }
@@ -230,22 +186,15 @@ const Header = () => {
         <div>
             <Navbar className="mx-auto max-w-screen-xl px-4 py-2 bg-transparent shadow-none">
                 <div className="flex items-center justify-between text-blue-gray-900">
-                    <Typography
-                        as="a"
-                        href="#"
-                        variant="h6"
-                        className="mr-4 cursor-pointer py-1.5 lg:ml-2"
-                    >
-                        CanvasCraze
-                    </Typography>
+                    <Link to='/'><h1 className="mr-4 cursor-pointer py-1.5 lg:ml-2 text-xl font-bold">CanvasCraze</h1></Link>
                     <div className="hidden lg:block">
                         <NavList />
                     </div>
                     <div className="hidden gap-2 lg:flex">
-                        <Link to='/login'><Button variant="text" size="sm" color="blue-gray">
+                        <Link to='/login'><Button className="rounded-sm" variant="text" size="sm" color="blue-gray">
                             Log In
                         </Button></Link>
-                        <Link to='/signUp'><Button variant="gradient" size="sm">
+                        <Link to='/signUp'><Button className="rounded-sm" variant="gradient" size="sm">
                             Sign Up
                         </Button></Link>
                     </div>
@@ -265,10 +214,10 @@ const Header = () => {
                 <Collapse open={openNav}>
                     <NavList />
                     <div className="flex w-full flex-nowrap items-center gap-2 lg:hidden">
-                        <Link to='/login'><Button variant="outlined" size="sm" color="blue-gray" fullWidth>
+                        <Link to='/login'><Button className="rounded-sm" variant="outlined" size="sm" color="blue-gray" fullWidth>
                             Log In
                         </Button></Link>
-                        <Link to='/signUp'><Button variant="gradient" size="sm" fullWidth>
+                        <Link to='/signUp'><Button className="rounded-sm" variant="gradient" size="sm" fullWidth>
                             Sign Up
                         </Button></Link>
                     </div>
