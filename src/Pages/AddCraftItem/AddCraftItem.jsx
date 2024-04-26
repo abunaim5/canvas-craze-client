@@ -1,5 +1,6 @@
 import { Button, Input } from "@material-tailwind/react";
 import { useForm, } from "react-hook-form"
+import Swal from "sweetalert2";
 
 const AddCraftItem = () => {
     const {
@@ -16,7 +17,11 @@ const AddCraftItem = () => {
         })
         .then(res => res.json())
         .then(data => {
-            console.log(data);
+            Swal.fire({
+                title: "Success",
+                text: "Your craft item has been added.",
+                icon: "success"
+              });
         })
         console.log(craftItem);
       }

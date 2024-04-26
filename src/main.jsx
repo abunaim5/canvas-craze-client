@@ -11,6 +11,7 @@ import ErrorPage from './Pages/ErrorPage/ErrorPage.jsx';
 import Login from './Pages/Login/Login.jsx';
 import SignUp from './Pages/SignUp/SignUp.jsx';
 import AddCraftItem from './Pages/AddCraftItem/AddCraftItem.jsx';
+import AllArtAndCraft from './Pages/AllArtAndCraft/AllArtAndCraft.jsx';
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,11 @@ const router = createBrowserRouter([
       {
         path: '/addCraft',
         element: <AddCraftItem></AddCraftItem>
+      },
+      {
+        path: '/allArtAndCraft',
+        element: <AllArtAndCraft></AllArtAndCraft>,
+        loader: () => fetch('http://localhost:5000/craftItems')
       }
     ],
   },

@@ -158,7 +158,7 @@ function NavListMenu() {
 function NavList() {
     const links = <>
         <NavLink to='/'><ListItem className="flex items-center gap-2 py-2 pr-4 text-sm">Home</ListItem></NavLink>
-        <NavLink><ListItem className="flex items-center gap-2 py-2 pr-4 text-sm">Art & Craft Items</ListItem></NavLink>
+        <NavLink to='/allArtAndCraft'><ListItem className="flex items-center gap-2 py-2 pr-4 text-sm">All Art & Craft</ListItem></NavLink>
         <NavListMenu />
         <NavLink to='/addCraft'><ListItem className="flex items-center gap-2 py-2 pr-4 text-sm">Add Craft Item</ListItem></NavLink>
         <NavLink><ListItem className="flex items-center gap-2 py-2 pr-4 text-sm">My Art & Craft List</ListItem></NavLink>
