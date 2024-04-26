@@ -33,7 +33,7 @@ const Banner = () => {
                             <Typography
                                 variant="h1"
                                 color="white"
-                                className="mb-4 text-3xl md:text-4xl lg:text-5xl"
+                                className="mb-4 text-3xl md:text-4xl lg:text-5xl xl:text-7xl"
                             >
                                 Unleash Your Creativity!
                             </Typography>
@@ -45,10 +45,10 @@ const Banner = () => {
                                  Explore a world of artistic possibilities with CanvasCraze. From premium canvases to vibrant paints, we have everything you need to bring your imagination to life.
                             </Typography>
                             <div className="flex justify-center gap-2">
-                                <Button size="lg" color="white">
+                                <Button className="rounded-none" size="lg" color="white">
                                     Explore
                                 </Button>
-                                <Button size="lg" color="white" variant="text">
+                                <Button className="rounded-none" size="lg" color="white" variant="text">
                                     Gallery
                                 </Button>
                             </div>
@@ -66,7 +66,7 @@ const Banner = () => {
                             <Typography
                                 variant="h1"
                                 color="white"
-                                className="mb-4 text-3xl md:text-4xl lg:text-5xl"
+                                className="mb-4 text-3xl md:text-4xl lg:text-5xl xl:text-7xl"
                             >
                                 Elevate Your Artistry
                             </Typography>
@@ -78,10 +78,10 @@ const Banner = () => {
                                  Elevate your artistic endeavors with CanvasCraze. Discover high-quality brushes, sketchbooks, and drawing tools designed to inspire and empower artists of all levels.
                             </Typography>
                             <div className="flex justify-center gap-2">
-                                <Button size="lg" color="white">
+                                <Button className="rounded-none" size="lg" color="white">
                                     Explore
                                 </Button>
-                                <Button size="lg" color="white" variant="text">
+                                <Button className="rounded-none" size="lg" color="white" variant="text">
                                     Gallery
                                 </Button>
                             </div>
@@ -99,7 +99,7 @@ const Banner = () => {
                             <Typography
                                 variant="h1"
                                 color="white"
-                                className="mb-4 text-3xl md:text-4xl lg:text-5xl"
+                                className="mb-4 text-3xl md:text-4xl lg:text-5xl xl:text-7xl"
                             >
                                 Inspiration Awaits
                             </Typography>
@@ -111,10 +111,10 @@ const Banner = () => {
                                   Dive into a realm of inspiration with CanvasCraze. Browse our curated collection of painting and drawing supplies, and embark on a journey of self-expression and creativity.
                             </Typography>
                             <div className="flex justify-center gap-2">
-                                <Button size="lg" color="white">
+                                <Button className="rounded-none" size="lg" color="white">
                                     Explore
                                 </Button>
-                                <Button size="lg" color="white" variant="text">
+                                <Button className="rounded-none" size="lg" color="white" variant="text">
                                     Gallery
                                 </Button>
                             </div>

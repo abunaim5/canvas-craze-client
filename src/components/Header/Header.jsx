@@ -191,10 +191,10 @@ const Header = () => {
                         <NavList />
                     </div>
                     <div className="hidden gap-2 lg:flex">
-                        <Link to='/login'><Button className="rounded-sm" variant="text" size="sm" color="blue-gray">
+                        <Link to='/login'><Button className="rounded-none" variant="text" size="sm" color="blue-gray">
                             Log In
                         </Button></Link>
-                        <Link to='/signUp'><Button className="rounded-sm" variant="gradient" size="sm">
+                        <Link to='/signUp'><Button className="rounded-none" variant="gradient" size="sm">
                             Sign Up
                         </Button></Link>
                     </div>

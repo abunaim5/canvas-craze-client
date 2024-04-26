@@ -29,7 +29,7 @@ const SignUp = () => {
                         <Input
                             size="lg"
                             placeholder="name@mail.com"
-                            className=" !border-t-blue-gray-200 focus:!border-t-gray-900 rounded-sm"
+                            className=" !border-t-blue-gray-200 focus:!border-t-gray-900 rounded-none"
                             labelProps={{
                                 className: "before:content-none after:content-none",
                             }}
@@ -41,7 +41,7 @@ const SignUp = () => {
                             type="email"
                             size="lg"
                             placeholder="name@mail.com"
-                            className=" !border-t-blue-gray-200 focus:!border-t-gray-900 rounded-sm"
+                            className=" !border-t-blue-gray-200 focus:!border-t-gray-900 rounded-none"
                             labelProps={{
                                 className: "before:content-none after:content-none",
                             }}
@@ -52,7 +52,7 @@ const SignUp = () => {
                         <Input
                             size="lg"
                             placeholder="https://"
-                            className=" !border-t-blue-gray-200 focus:!border-t-gray-900 rounded-sm"
+                            className=" !border-t-blue-gray-200 focus:!border-t-gray-900 rounded-none"
                             labelProps={{
                                 className: "before:content-none after:content-none",
                             }}
@@ -64,7 +64,7 @@ const SignUp = () => {
                             type={showPass ? "text" : "password"}
                             size="lg"
                             placeholder="********"
-                            className=" !border-t-blue-gray-200 focus:!border-t-gray-900 rounded-sm"
+                            className=" !border-t-blue-gray-200 focus:!border-t-gray-900 rounded-none"
                             labelProps={{
                                 className: "before:content-none after:content-none",
                             }}
@@ -72,7 +72,7 @@ const SignUp = () => {
                         />
                     </div>
                     <Checkbox
-                        className="rounded-sm"
+                        className="rounded-none"
                         label={
                             <Typography
                                 variant="small"
@@ -90,7 +90,7 @@ const SignUp = () => {
                         }
                         containerProps={{ className: "-ml-2.5" }}
                     />
-                    <Button className="mt-6 rounded-sm" fullWidth>
+                    <Button className="mt-6 rounded-none" fullWidth>
                         sign up
                     </Button>
                     <Typography color="gray" className="mt-4 text-center font-normal">
