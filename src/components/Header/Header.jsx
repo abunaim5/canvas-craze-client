@@ -160,7 +160,7 @@ function NavList() {
         <NavLink to='/'><ListItem className="flex items-center gap-2 py-2 pr-4 text-sm">Home</ListItem></NavLink>
         <NavLink><ListItem className="flex items-center gap-2 py-2 pr-4 text-sm">Art & Craft Items</ListItem></NavLink>
         <NavListMenu />
-        <NavLink><ListItem className="flex items-center gap-2 py-2 pr-4 text-sm">Add Craft Item</ListItem></NavLink>
+        <NavLink to='/addCraft'><ListItem className="flex items-center gap-2 py-2 pr-4 text-sm">Add Craft Item</ListItem></NavLink>
         <NavLink><ListItem className="flex items-center gap-2 py-2 pr-4 text-sm">My Art & Craft List</ListItem></NavLink>
         <NavLink><ListItem className="flex items-center gap-2 py-2 pr-4 text-sm">Contact Us</ListItem></NavLink>
     </>

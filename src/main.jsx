@@ -10,6 +10,7 @@ import Home from './Pages/Home/Home.jsx';
 import ErrorPage from './Pages/ErrorPage/ErrorPage.jsx';
 import Login from './Pages/Login/Login.jsx';
 import SignUp from './Pages/SignUp/SignUp.jsx';
+import AddCraftItem from './Pages/AddCraftItem/AddCraftItem.jsx';
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: '/signUp',
         element: <SignUp></SignUp>
+      },
+      {
+        path: '/addCraft',
+        element: <AddCraftItem></AddCraftItem>
       }
     ],
   },
