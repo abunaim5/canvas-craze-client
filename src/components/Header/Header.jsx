@@ -39,6 +39,7 @@ import {
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider/AuthProvider";
 import PropTypes from 'prop-types';
+import Swal from "sweetalert2";
 
 const profileMenuItems = [
     {
@@ -111,8 +112,20 @@ const navListMenuItems = [
     },
 ];
 
-function ProfileMenu({user}) {
+function ProfileMenu({user, logoutUser}) {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+
+    const handleLogoutUser = () => {
+        logoutUser()
+        .then(() => {
+            Swal.fire({
+                title: "Success",
+                text: "You are logged out",
+                icon: "success"
+              });
+        })
+        .catch(error => console.error(error))
+    }
 
     const closeMenu = () => setIsMenuOpen(false);
 
@@ -144,7 +157,7 @@ function ProfileMenu({user}) {
                     return (
                         <MenuItem
                             key={label}
-                            onClick={closeMenu}
+                            onClick={closeMenu && isLastItem && handleLogoutUser}
                             className={`flex items-center gap-2 rounded ${isLastItem
                                     ? "hover:bg-red-500/10 focus:bg-red-500/10 active:bg-red-500/10"
                                     : ""
@@ -265,7 +278,7 @@ function NavList() {
 }
 
 const Header = () => {
-    const { user } = useContext(AuthContext)
+    const { user, logoutUser } = useContext(AuthContext)
 
     const [openNav, setOpenNav] = React.useState(false);
 
@@ -287,7 +300,7 @@ const Header = () => {
 
                     <div>
                         {
-                            user ? <ProfileMenu user={user} /> : <div className="hidden gap-2 lg:flex">
+                            user ? <ProfileMenu user={user} logoutUser={logoutUser} /> : <div className="hidden gap-2 lg:flex">
                                 <Link to='/login'><Button className="rounded-none font-lato hover:glass" variant="text" size="sm" color="blue-gray">
                                     Log In
                                 </Button></Link>
@@ -327,7 +340,8 @@ const Header = () => {
 };
 
 ProfileMenu.propTypes = {
-    user: PropTypes.object.isRequired
+    user: PropTypes.object.isRequired,
+    logoutUser: PropTypes.func.isRequired
 }
 
 export default Header;
