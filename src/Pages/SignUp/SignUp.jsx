@@ -25,6 +25,14 @@ const SignUp = () => {
 
       const onSubmit = data => {
         const {name, email, photo, password} = data;
+        if(!/^(?=.*[a-z])(?=.*[A-Z]).+$/.test(password)){
+            return Swal.fire({
+                title: "Error",
+                text: "Password must have at least one uppercase and one lowercase letter",
+                icon: "error"
+              });
+        }
+
         createUser(email, password)
         .then(user => {
             updateUserInfo(name, photo)
@@ -102,7 +110,10 @@ const SignUp = () => {
                             Password
                         </Typography>
                         <Input
-                            {...register('password', {required: true})}
+                            {...register('password', {required: "This field is required", minLength: {
+                                value: 6,
+                                message: 'Password should be 6 character or more'
+                            }})}
                             type={showPass ? "text" : "password"}
                             size="lg"
                             placeholder="********"
@@ -112,7 +123,7 @@ const SignUp = () => {
                             }}
                             icon={<button type="button" onClick={() => setShowPass(!showPass)} className="text-lg">{showPass ? <FaEyeSlash /> : <FaEye />}</button>}
                         />
-                        {errors.password && <span className="-mt-4 text-red-700">This field is required</span>}
+                        {errors.password && <span className="-mt-4 text-red-700">{errors.password?.message}</span>}
                     </div>
                     <Checkbox
                         className="rounded-none"

@@ -28,6 +28,7 @@ import {
     SunIcon,
     TagIcon,
     UserGroupIcon,
+    UserIcon,
 } from "@heroicons/react/24/solid";
 import {
     UserCircleIcon,
@@ -42,6 +43,10 @@ import PropTypes from 'prop-types';
 import Swal from "sweetalert2";
 
 const profileMenuItems = [
+    {
+        label: "User",
+        icon: UserIcon,
+    },
     {
         label: "My Profile",
         icon: UserCircleIcon,
@@ -153,6 +158,7 @@ function ProfileMenu({user, logOutUser}) {
             </MenuHandler>
             <MenuList className="p-1">
                 {profileMenuItems.map(({ label, icon }, key) => {
+                    const displayName = key === profileMenuItems.length - 6;
                     const isLastItem = key === profileMenuItems.length - 1;
                     return (
                         <MenuItem
@@ -173,7 +179,7 @@ function ProfileMenu({user, logOutUser}) {
                                 className="font-normal"
                                 color={isLastItem ? "red" : "inherit"}
                             >
-                                {label}
+                                {displayName ? user?.displayName : label}
                             </Typography>
                         </MenuItem>
                     );
