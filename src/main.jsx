@@ -51,7 +51,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/myCrafts',
-        element: <MyArtAndCrafts></MyArtAndCrafts>
+        element: <MyArtAndCrafts></MyArtAndCrafts>,
       }
     ],
   },
