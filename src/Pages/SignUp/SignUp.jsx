@@ -10,6 +10,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form"
 import { AuthContext } from "../../Providers/AuthProvider/AuthProvider";
+import Swal from "sweetalert2";
 
 const SignUp = () => {
     const [showPass, setShowPass] = useState(false);
@@ -28,6 +29,11 @@ const SignUp = () => {
         .then(user => {
             updateUserInfo(name, photo)
             .then(()=>{
+                Swal.fire({
+                    title: "Success",
+                    text: "Account created successfully",
+                    icon: "success"
+                  });
                 console.log('Profile updated')
             })
             .catch(error => {
