@@ -14,6 +14,7 @@ import AddCraftItem from './Pages/AddCraftItem/AddCraftItem.jsx';
 import AllArtAndCraft from './Pages/AllArtAndCraft/AllArtAndCraft.jsx';
 import ViewDetails from './Pages/ViewDetails/ViewDetails.jsx';
 import MyArtAndCrafts from './Pages/MyArtAndCrafts/MyArtAndCrafts.jsx';
+import AuthProvider from './Providers/AuthProvider/AuthProvider.jsx';
 
 const router = createBrowserRouter([
   {
@@ -46,7 +47,7 @@ const router = createBrowserRouter([
       {
         path: '/details/:id',
         element: <ViewDetails></ViewDetails>,
-        loader: ({params}) => fetch(`http://localhost:5000/craftItems/${params.id}`)
+        loader: ({ params }) => fetch(`http://localhost:5000/craftItems/${params.id}`)
       },
       {
         path: '/myCrafts',
@@ -58,6 +59,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </React.StrictMode>,
 )
