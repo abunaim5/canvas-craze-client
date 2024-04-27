@@ -112,11 +112,11 @@ const navListMenuItems = [
     },
 ];
 
-function ProfileMenu({user, logoutUser}) {
+function ProfileMenu({user, logOutUser}) {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
     const handleLogoutUser = () => {
-        logoutUser()
+        logOutUser()
         .then(() => {
             Swal.fire({
                 title: "Success",
@@ -278,7 +278,7 @@ function NavList() {
 }
 
 const Header = () => {
-    const { user, logoutUser } = useContext(AuthContext)
+    const { user, logOutUser } = useContext(AuthContext)
 
     const [openNav, setOpenNav] = React.useState(false);
 
@@ -300,7 +300,7 @@ const Header = () => {
 
                     <div>
                         {
-                            user ? <ProfileMenu user={user} logoutUser={logoutUser} /> : <div className="hidden gap-2 lg:flex">
+                            user ? <ProfileMenu user={user} logOutUser={logOutUser} /> : <div className="hidden gap-2 lg:flex">
                                 <Link to='/login'><Button className="rounded-none font-lato hover:glass" variant="text" size="sm" color="blue-gray">
                                     Log In
                                 </Button></Link>
@@ -341,7 +341,7 @@ const Header = () => {
 
 ProfileMenu.propTypes = {
     user: PropTypes.object.isRequired,
-    logoutUser: PropTypes.func.isRequired
+    logOutUser: PropTypes.func.isRequired
 }
 
 export default Header;
