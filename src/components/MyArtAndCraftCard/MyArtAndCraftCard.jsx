@@ -9,9 +9,8 @@ import {
 import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
 
-const CraftItemsCard = ({craftItem, handleViewDetails}) => {
+const MyArtAndCraftCard = () => {
     const {_id, item_name, description, price, photo} = craftItem;
-
 
     return (
         <div>
@@ -55,9 +54,4 @@ const CraftItemsCard = ({craftItem, handleViewDetails}) => {
     );
 };
 
-CraftItemsCard.propTypes = {
-    craftItem: PropTypes.object.isRequired,
-    handleViewDetails: PropTypes.func.isRequired
-}
-
-export default CraftItemsCard;
+export default MyArtAndCraftCard;
