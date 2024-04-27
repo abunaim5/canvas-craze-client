@@ -13,7 +13,7 @@ import { AuthContext } from "../../Providers/AuthProvider/AuthProvider";
 
 const SignUp = () => {
     const [showPass, setShowPass] = useState(false);
-    const {createUser} = useContext(AuthContext);
+    const {createUser, updateUserInfo} = useContext(AuthContext);
 
     const {
         register,
@@ -26,7 +26,14 @@ const SignUp = () => {
         const {name, email, photo, password} = data;
         createUser(email, password)
         .then(user => {
-            console.log(user);
+            updateUserInfo(name, photo)
+            .then(()=>{
+                console.log('Profile updated')
+            })
+            .catch(error => {
+                console.error(error);
+            })
+            console.log(user.user);
         })
         .catch(error => {
             console.error(error);
