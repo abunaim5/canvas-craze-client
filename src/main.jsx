@@ -15,6 +15,7 @@ import AllArtAndCraft from './Pages/AllArtAndCraft/AllArtAndCraft.jsx';
 import ViewDetails from './Pages/ViewDetails/ViewDetails.jsx';
 import MyArtAndCrafts from './Pages/MyArtAndCrafts/MyArtAndCrafts.jsx';
 import AuthProvider from './Providers/AuthProvider/AuthProvider.jsx';
+import UpdateCraftDetails from './Pages/UpdateCraftDetalils/UpdateCraftDetails.jsx';
 
 const router = createBrowserRouter([
   {
@@ -52,6 +53,11 @@ const router = createBrowserRouter([
       {
         path: '/myCrafts',
         element: <MyArtAndCrafts></MyArtAndCrafts>,
+      },
+      {
+        path: '/updateCraft/:id',
+        element: <UpdateCraftDetails></UpdateCraftDetails>,
+        loader: ({params}) => fetch(`http://localhost:5000/craftItems/${params.id}`)
       }
     ],
   },
