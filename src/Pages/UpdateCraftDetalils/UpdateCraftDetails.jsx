@@ -6,7 +6,7 @@ import { AuthContext } from "../../Providers/AuthProvider/AuthProvider";
 import { useLoaderData } from "react-router-dom";
 
 const UpdateCraftDetails = () => {
-    const {user} = useContext(AuthContext);
+    const { user } = useContext(AuthContext);
     const craftItem = useLoaderData();
     const { _id, item_name, subcategory_name, rating, price, stock_status, customization, photo, processing_time, description } = craftItem;
     // console.log(craftItem);
@@ -25,13 +25,15 @@ const UpdateCraftDetails = () => {
         })
             .then(res => res.json())
             .then(data => {
-                Swal.fire({
-                    title: "Success",
-                    text: "Your craft item has been successfully Updated.",
-                    icon: "success"
-                });
+                if (data.modifiedCount > 0) {
+                    Swal.fire({
+                        title: "Success",
+                        text: "Your craft item has been successfully Updated.",
+                        icon: "success"
+                    });
+                }
             })
-        
+
         console.log(updatedCraftItem);
     }
 
