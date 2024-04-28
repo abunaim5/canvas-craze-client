@@ -6,6 +6,9 @@ module.exports = withMT({
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  // daisyui: {
+  //   themes: ["light", "synthwave"],
+  // },
   theme: {
     extend: {},
   },

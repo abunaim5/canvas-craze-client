@@ -10,7 +10,7 @@ const Root = () => {
     }
 
     return (
-        <div>
+        <div className="dark:bg-[#0F172A]">
             <Header></Header>
             <Outlet></Outlet>
         </div>

@@ -41,6 +41,7 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider/AuthProvider";
 import PropTypes from 'prop-types';
 import Swal from "sweetalert2";
+import Switcher from "../Switcher/Switcher";
 
 const profileMenuItems = [
     {
@@ -117,19 +118,19 @@ const navListMenuItems = [
     },
 ];
 
-function ProfileMenu({user, logOutUser}) {
+function ProfileMenu({ user, logOutUser }) {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
     const handleLogoutUser = () => {
         logOutUser()
-        .then(() => {
-            Swal.fire({
-                title: "Success",
-                text: "You are logged out",
-                icon: "success"
-              });
-        })
-        .catch(error => console.error(error))
+            .then(() => {
+                Swal.fire({
+                    title: "Success",
+                    text: "You are logged out",
+                    icon: "success"
+                });
+            })
+            .catch(error => console.error(error))
     }
 
     const closeMenu = () => setIsMenuOpen(false);
@@ -146,12 +147,12 @@ function ProfileMenu({user, logOutUser}) {
                         variant="circular"
                         size="sm"
                         alt={user.displayName}
-                        className="border border-[#a55e3f] p-0.5"
+                        className="border border-[#a55e3f] dark:border-[#C8CBD0] p-0.5"
                         src={user?.photoURL ? user.photoURL : 'https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80'}
                     />
                     <ChevronDownIcon
                         strokeWidth={2.5}
-                        className={`h-3 w-3 transition-transform ${isMenuOpen ? "rotate-180" : ""} text-[#a55e3f]`}
+                        className={`h-3 w-3 transition-transform ${isMenuOpen ? "rotate-180" : ""} text-[#a55e3f] dark:text-[#C8CBD0]`}
                     />
                 </Button>
             </MenuHandler>
@@ -164,8 +165,8 @@ function ProfileMenu({user, logOutUser}) {
                             key={label}
                             onClick={closeMenu && isLastItem && handleLogoutUser}
                             className={`flex items-center gap-2 rounded ${isLastItem
-                                    ? "hover:bg-red-500/10 focus:bg-red-500/10 active:bg-red-500/10"
-                                    : ""
+                                ? "hover:bg-red-500/10 focus:bg-red-500/10 active:bg-red-500/10"
+                                : ""
                                 }`}
                         >
                             {React.createElement(icon, {
@@ -234,7 +235,7 @@ function NavListMenu() {
                 <MenuHandler>
                     <Typography as="div" variant="small" className="font-medium">
                         <ListItem
-                            className="flex items-center gap-2 py-2 pr-4 font-medium text-gray-900 font-lato rounded-none"
+                            className="flex items-center gap-2 py-2 pr-4 font-medium text-gray-900 dark:text-[#C8CBD0] font-lato rounded-none"
                             selected={isMenuOpen || isMobileMenuOpen}
                             onClick={() => setIsMobileMenuOpen((cur) => !cur)}
                         >
@@ -270,12 +271,12 @@ function NavList() {
     // console.log(currentUser)
 
     const links = <>
-        <NavLink to='/'><ListItem className="flex items-center gap-2 py-2 pr-4 text-sm font-lato rounded-none">Home</ListItem></NavLink>
-        <NavLink to='/allArtAndCraft'><ListItem className="flex items-center gap-2 py-2 pr-4 text-sm font-lato rounded-none">All Art & Craft</ListItem></NavLink>
+        <NavLink to='/'><ListItem className="flex items-center gap-2 py-2 pr-4 text-sm font-lato rounded-none dark:text-[#C8CBD0]">Home</ListItem></NavLink>
+        <NavLink to='/allArtAndCraft'><ListItem className="flex items-center gap-2 py-2 pr-4 text-sm font-lato rounded-none dark:text-[#C8CBD0]">All Art & Craft</ListItem></NavLink>
         <NavListMenu />
-        <NavLink to='/addCraft'><ListItem className="flex items-center gap-2 py-2 pr-4 text-sm font-lato rounded-none">Add Craft Item</ListItem></NavLink>
-        <NavLink to='/myCrafts'><ListItem className="flex items-center gap-2 py-2 pr-4 text-sm font-lato rounded-none">My Art & Craft List</ListItem></NavLink>
-        <NavLink><ListItem className="flex items-center gap-2 py-2 pr-4 text-sm font-lato rounded-none">Contact Us</ListItem></NavLink>
+        <NavLink to='/addCraft'><ListItem className="flex items-center gap-2 py-2 pr-4 text-sm font-lato rounded-none dark:text-[#C8CBD0]">Add Craft Item</ListItem></NavLink>
+        <NavLink to='/myCrafts'><ListItem className="flex items-center gap-2 py-2 pr-4 text-sm font-lato rounded-none dark:text-[#C8CBD0]">My Art & Craft List</ListItem></NavLink>
+        <NavLink><ListItem className="flex items-center gap-2 py-2 pr-4 text-sm font-lato rounded-none dark:text-[#C8CBD0]">Contact Us</ListItem></NavLink>
     </>
 
     return (
@@ -286,7 +287,7 @@ function NavList() {
 }
 
 const Header = () => {
-    const { user, logOutUser } = useContext(AuthContext)
+    const { user, logOutUser } = useContext(AuthContext);
 
     const [openNav, setOpenNav] = React.useState(false);
 
@@ -299,37 +300,41 @@ const Header = () => {
 
     return (
         <div>
-            <Navbar className="mx-auto max-w-screen-xl px-4 py-2 bg-transparent shadow-none">
+            <Navbar className="mx-auto max-w-screen-xl px-4 py-2 bg-transparent backdrop-saturate-100 backdrop-blur-none border-none bg-opacity-0 shadow-none">
                 <div className="flex items-center justify-between text-blue-gray-900">
-                    <Link to='/'><h1 className="mr-4 cursor-pointer py-1.5 lg:ml-2 text-2xl font-bold text-[#a55e3f]">CanvasCraze</h1></Link>
+                    <Link to='/'><h1 className="mr-4 cursor-pointer py-1.5 lg:ml-2 text-2xl font-bold text-[#a55e3f] dark:text-[#C8CBD0]">CanvasCraze</h1></Link>
                     <div className="hidden lg:block">
                         <NavList />
                     </div>
-
-                    <div>
-                        {
-                            user ? <ProfileMenu user={user} logOutUser={logOutUser} /> : <div className="hidden gap-2 lg:flex">
-                                <Link to='/login'><Button className="rounded-none font-lato hover:glass" variant="text" size="sm" color="blue-gray">
-                                    Log In
-                                </Button></Link>
-                                <Link to='/signUp'><Button className="rounded-none font-lato bg-[#a55e3f] glass" size="sm">
-                                    Sign Up
-                                </Button></Link>
-                            </div>
-                        }
+                    <div className="flex items-center gap-2">
+                        <div>
+                            {
+                                user ? <ProfileMenu user={user} logOutUser={logOutUser} /> : <div className="hidden gap-2 lg:flex">
+                                    <Link to='/login'><Button className="rounded-none font-lato hover:glass" variant="text" size="sm" color="blue-gray">
+                                        Log In
+                                    </Button></Link>
+                                    <Link to='/signUp'><Button className="rounded-none font-lato bg-[#a55e3f] glass" size="sm">
+                                        Sign Up
+                                    </Button></Link>
+                                </div>
+                            }
+                        </div>
+                        <div>
+                            <Switcher />
+                        </div>
+                        <IconButton
+                            variant="text"
+                            color="blue-gray"
+                            className="lg:hidden"
+                            onClick={() => setOpenNav(!openNav)}
+                        >
+                            {openNav ? (
+                                <XMarkIcon className="h-6 w-6" strokeWidth={2} />
+                            ) : (
+                                <Bars3Icon className="h-6 w-6" strokeWidth={2} />
+                            )}
+                        </IconButton>
                     </div>
-                    <IconButton
-                        variant="text"
-                        color="blue-gray"
-                        className="lg:hidden"
-                        onClick={() => setOpenNav(!openNav)}
-                    >
-                        {openNav ? (
-                            <XMarkIcon className="h-6 w-6" strokeWidth={2} />
-                        ) : (
-                            <Bars3Icon className="h-6 w-6" strokeWidth={2} />
-                        )}
-                    </IconButton>
                 </div>
                 <Collapse open={openNav}>
                     <NavList />
