@@ -13,13 +13,15 @@ import {
 
 const MyArtAndCrafts = () => {
     const { user } = useContext(AuthContext) || {};
-    const [myCrafts, setMyCrafts] = useState([])
+    const [myCrafts, setMyCrafts] = useState([]);
+    const [filteredCrafts, setFilteredCrafts] = useState([]);
 
     useEffect(() => {
         fetch(`http://localhost:5000/myCrafts/${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setMyCrafts(data);
+                setFilteredCrafts(data);
             });
     }, [user]);
 
@@ -67,6 +69,20 @@ const MyArtAndCrafts = () => {
         });
     }
 
+    const handleFilterByCustomization = query => {
+        if (query === 'Yes') {
+            const customizable = myCrafts.filter(myCraft => myCraft.customization === 'Yes')
+            setFilteredCrafts(customizable);
+        }
+        else if(query === 'No'){
+            const nonCustomizable = myCrafts.filter(myCraft => myCraft.customization === 'No');
+            setFilteredCrafts(nonCustomizable);
+        }
+        else if(query === 'Custom'){
+            setFilteredCrafts(myCrafts);
+        }
+    }
+
     return (
         <div className="max-w-screen-xl mx-auto mt-28">
             <div className="flex justify-center">
@@ -80,15 +96,15 @@ const MyArtAndCrafts = () => {
                         <Button className="rounded-none">Filter by Customization</Button>
                     </MenuHandler>
                     <MenuList className="">
-                        <MenuItem className="text-center">Custom</MenuItem>
-                        <MenuItem className="text-center">Yes</MenuItem>
-                        <MenuItem className="text-center">No</MenuItem>
+                        <MenuItem onClick={() => handleFilterByCustomization('Custom')} className="text-center">Custom</MenuItem>
+                        <MenuItem onClick={() => handleFilterByCustomization('Yes')} className="text-center">Yes</MenuItem>
+                        <MenuItem onClick={() => handleFilterByCustomization('No')} className="text-center">No</MenuItem>
                     </MenuList>
                 </Menu>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {
-                    myCrafts?.map(myCraft => <MyArtAndCraftCard
+                    filteredCrafts?.map(myCraft => <MyArtAndCraftCard
                         key={myCraft._id}
                         myCraft={myCraft}
                         handleViewDetails={handleViewDetails}
