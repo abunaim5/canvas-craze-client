@@ -12,9 +12,9 @@ const CraftItems = () => {
         })
     }
     return (
-        <div className="max-w-screen-xl mx-auto">
-            <div>
-                <h1 className="text-2xl font-bold">Arts & Craft Items</h1>
+        <div>
+            <div className="text-center mb-16">
+                <h1 className="text-4xl font-semibold">Arts & Craft Items</h1>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {
