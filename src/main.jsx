@@ -16,6 +16,7 @@ import ViewDetails from './Pages/ViewDetails/ViewDetails.jsx';
 import MyArtAndCrafts from './Pages/MyArtAndCrafts/MyArtAndCrafts.jsx';
 import AuthProvider from './Providers/AuthProvider/AuthProvider.jsx';
 import UpdateCraftDetails from './Pages/UpdateCraftDetalils/UpdateCraftDetails.jsx';
+import CategoryItems from './Pages/CategoryItems/CategoryItems.jsx';
 
 const router = createBrowserRouter([
   {
@@ -26,7 +27,7 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home></Home>,
-        loader: () => fetch('http://localhost:5000/craftItems')
+        loader: () => fetch('https://canvas-craze-server.vercel.app/craftItems')
       },
       {
         path: '/login',
@@ -43,12 +44,12 @@ const router = createBrowserRouter([
       {
         path: '/allArtAndCraft',
         element: <AllArtAndCraft></AllArtAndCraft>,
-        loader: () => fetch('http://localhost:5000/craftItems')
+        loader: () => fetch('https://canvas-craze-server.vercel.app/craftItems')
       },
       {
         path: '/details/:id',
         element: <ViewDetails></ViewDetails>,
-        loader: ({ params }) => fetch(`http://localhost:5000/craftItems/${params.id}`)
+        loader: ({ params }) => fetch(`https://canvas-craze-server.vercel.app/craftItems/${params.id}`)
       },
       {
         path: '/myCrafts',
@@ -57,7 +58,11 @@ const router = createBrowserRouter([
       {
         path: '/updateCraft/:id',
         element: <UpdateCraftDetails></UpdateCraftDetails>,
-        loader: ({params}) => fetch(`http://localhost:5000/craftItems/${params.id}`)
+        loader: ({params}) => fetch(`https://canvas-craze-server.vercel.app/craftItems/${params.id}`)
+      },
+      {
+        path: '/categoryItems',
+        element: <CategoryItems></CategoryItems>
       }
     ],
   },

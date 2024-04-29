@@ -17,7 +17,7 @@ const MyArtAndCrafts = () => {
     const [filteredCrafts, setFilteredCrafts] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myCrafts/${user?.email}`)
+        fetch(`https://canvas-craze-server.vercel.app/myCrafts/${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setMyCrafts(data);
@@ -26,7 +26,7 @@ const MyArtAndCrafts = () => {
     }, [user]);
 
     const handleViewDetails = id => {
-        fetch(`http://localhost:5000/craftItems/${id}`)
+        fetch(`https://canvas-craze-server.vercel.app/craftItems/${id}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data);
@@ -34,7 +34,7 @@ const MyArtAndCrafts = () => {
     };
 
     const handleUpdateCraft = id => {
-        fetch(`http://localhost:5000/craftItems/${id}`)
+        fetch(`https://canvas-craze-server.vercel.app/craftItems/${id}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data);
@@ -52,7 +52,7 @@ const MyArtAndCrafts = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/craftItems/${id}`, {
+                fetch(`https://canvas-craze-server.vercel.app/craftItems/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

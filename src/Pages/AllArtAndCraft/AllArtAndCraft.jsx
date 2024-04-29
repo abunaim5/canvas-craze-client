@@ -35,7 +35,7 @@ const AllArtAndCraft = () => {
     const artAndCrafts = useLoaderData();
 
     const handleViewDetails = id => {
-        fetch(`http://localhost:5000/craftItems/${id}`)
+        fetch(`https://canvas-craze-server.vercel.app/craftItems/${id}`)
         .then(res => res.json())
         .then(data => {
             console.log(data);

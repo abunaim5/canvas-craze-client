@@ -6,12 +6,14 @@ import {
     // CardFooter,
     // Button,
 } from "@material-tailwind/react";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 // import { useState } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Providers/AuthProvider/AuthProvider";
 
 const CraftCategories = () => {
     const [categories, setCategories] = useState([])
+    const {setCategoryName} = useContext(AuthContext)
     // const [showBtn, setShowBtn] = useState('hidden')
 
     // const mouseMove = e => {
@@ -25,7 +27,7 @@ const CraftCategories = () => {
     // }
 
     useEffect(() => {
-        fetch('http://localhost:5000/categories')
+        fetch('https://canvas-craze-server.vercel.app/categories')
         .then(res => res.json())
         .then(data =>{
             setCategories(data);
@@ -41,10 +43,11 @@ const CraftCategories = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {
                     categories.map(category => <div key={category._id} className="max-w-max">
-                    <Link to='/category'>
+                    <Link to='/categoryItems'>
                         <Card
                             // onMouseEnter={mouseMove}
                             // onMouseOut={mouseMove}
+                            onClick={() => setCategoryName(category.subcategory_name)}
                             shadow={false}
                             className={`relative grid h-[40rem] w-full items-end justify-center overflow-hidden text-center rounded-none cursor-pointer`}
                         >

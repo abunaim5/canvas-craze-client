@@ -14,7 +14,7 @@ const AddCraftItem = () => {
         formState: { errors },
     } = useForm()
     const onSubmit = craftItem => {
-        fetch('http://localhost:5000/craftItems', {
+        fetch('https://canvas-craze-server.vercel.app/craftItems', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(craftItem)
