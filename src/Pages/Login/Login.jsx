@@ -6,7 +6,7 @@ import {
     Typography,
 } from "@material-tailwind/react";
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useForm } from "react-hook-form"
 import { AuthContext } from "../../Providers/AuthProvider/AuthProvider";
@@ -14,8 +14,9 @@ import Swal from "sweetalert2";
 
 const Login = () => {
     const [showPass, setShowPass] = useState(false);
-
     const { loginUser, googleLogin, githubLogin } = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
 
     const {
         register,
@@ -33,6 +34,7 @@ const Login = () => {
                     text: "You are Signed in successfully",
                     icon: "success"
                 });
+                navigate(location.state ? location.state : '/')
             })
             .catch(error => {
                 Swal.fire({
@@ -53,6 +55,7 @@ const Login = () => {
                 text: "Signed in successfully with Google",
                 icon: "success"
             });
+            navigate(location.state ? location.state : '/')
         })
         .catch(error => {
             console.error(error);
@@ -67,6 +70,7 @@ const Login = () => {
                 text: "Signed in successfully with Github",
                 icon: "success"
             });
+            navigate(location.state ? location.state : '/')
         })
         .catch(error => {
             console.error(error);

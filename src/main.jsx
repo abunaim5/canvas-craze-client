@@ -17,6 +17,7 @@ import MyArtAndCrafts from './Pages/MyArtAndCrafts/MyArtAndCrafts.jsx';
 import AuthProvider from './Providers/AuthProvider/AuthProvider.jsx';
 import UpdateCraftDetails from './Pages/UpdateCraftDetalils/UpdateCraftDetails.jsx';
 import CategoryItems from './Pages/CategoryItems/CategoryItems.jsx';
+import PrivateRoute from './Routes/PrivateRoute/PrivateRoute.jsx';
 
 const router = createBrowserRouter([
   {
@@ -53,7 +54,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/myCrafts',
-        element: <MyArtAndCrafts></MyArtAndCrafts>,
+        element: <PrivateRoute><MyArtAndCrafts></MyArtAndCrafts></PrivateRoute>,
       },
       {
         path: '/updateCraft/:id',

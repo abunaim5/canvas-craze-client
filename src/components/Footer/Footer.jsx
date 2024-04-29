@@ -19,20 +19,19 @@ const currentYear = new Date().getFullYear();
 
 const Footer = () => {
     return (
-        <div>
+        <div className="bg-[#F6F6F0]">
             <footer className="relative w-full">
-                <div className="mx-auto w-full max-w-screen-xl px-8">
+                <div className="mx-auto w-full max-w-screen-xl py-16 px-4">
                     <div className="grid grid-cols-1 justify-between gap-4 md:grid-cols-2">
-                        <Typography variant="h5" className="mb-6">
+                        <Typography className="mb-6 font-alegreya text-2xl font-semibold text-[#a55e3f]">
                             CanvasCraze
                         </Typography>
                         <div className="grid grid-cols-3 justify-between gap-4">
                             {LINKS.map(({ title, items }) => (
                                 <ul key={title}>
                                     <Typography
-                                        variant="small"
                                         color="blue-gray"
-                                        className="mb-3 font-medium opacity-40"
+                                        className="mb-3 font-medium opacity-90 font-alegreya text-lg text-[#a55e3f]"
                                     >
                                         {title}
                                     </Typography>
@@ -42,7 +41,7 @@ const Footer = () => {
                                                 as="a"
                                                 href="#"
                                                 color="gray"
-                                                className="py-1.5 font-normal transition-colors hover:text-blue-gray-900"
+                                                className="py-1.5 font-light text-base font-lato transition-colors text-[#000000] hover:text-blue-gray-900"
                                             >
                                                 {link}
                                             </Typography>
@@ -55,7 +54,7 @@ const Footer = () => {
                     <div className="mt-12 flex w-full flex-col items-center justify-center border-t border-blue-gray-50 py-4 md:flex-row md:justify-between">
                         <Typography
                             variant="small"
-                            className="mb-4 text-center font-normal text-blue-gray-900 md:mb-0"
+                            className="mb-4 text-center font-light text-base font-lato text-[#000000] md:mb-0"
                         >
                             &copy; {currentYear} <a href="https://material-tailwind.com/">CanvasCraze</a>. All
                             Rights Reserved.
