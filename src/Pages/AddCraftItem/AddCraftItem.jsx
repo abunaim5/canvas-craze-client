@@ -31,12 +31,12 @@ const AddCraftItem = () => {
     }
 
     return (
-        <div className="max-w-screen-xl mx-auto mt-28">
+        <div className="max-w-screen-xl mx-auto my-28">
             <div className="text-center mb-10">
-                <h1 className="text-5xl">Add art & craft</h1>
+                <h1 className="text-4xl uppercase text-[#a55e3f] dark:text-[#C8CBD0] font-medium tracking-widest">Add art & craft</h1>
             </div>
 
-            <form onSubmit={handleSubmit(onSubmit)} className="space-y-10">
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-10 dark:text-[#C8CBD0] font-lato">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div>
                         <Input {...register('item_name', { required: true })} variant="standard" label="Item Name" placeholder="Name" />
@@ -92,7 +92,7 @@ const AddCraftItem = () => {
                     {errors.description && <span className="text-red-700">This field is required</span>}
                 </div>
                 <div>
-                    <Button type="submit" className="rounded-none glass bg-[#a55e3f]" fullWidth>Add</Button>
+                    <Button type="submit" className="rounded-none glass bg-[#a55e3f] dark:text-[#000000] tracking-widest dark:bg-[#C8CBD0]" fullWidth>Add</Button>
                 </div>
             </form>
         </div>

@@ -14,13 +14,13 @@ const ViewDetails = () => {
     const { item_name, subcategory_name, rating, price, stock_status, customization, photo, processing_time, description } = artAndCraft;
 
     return (
-        <div className="max-w-screen-xl mx-auto mt-28">
-            <Card className="w-full shadow-lg rounded-none">
-                <CardHeader className="rounded-none m-0" floated={false} color="blue-gray">
+        <div className="max-w-screen-xl mx-auto my-28">
+            <Card className="w-full shadow-md rounded-none bg-transparent">
+                <CardHeader className="rounded-none m-0" floated={false} >
                     <img
                         className="w-full"
                         src={photo}
-                        alt="ui/ux review check"
+                        alt={item_name}
                     />
                     <div className="to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-tr from-transparent via-transparent to-black/60 " />
                     <IconButton
@@ -41,12 +41,12 @@ const ViewDetails = () => {
                 </CardHeader>
                 <CardBody>
                     <div className="mb-3 flex items-center justify-between">
-                        <Typography variant="h2" color="blue-gray" className="font-medium font-alegreya text-[#a55e3f]">
+                        <Typography variant="h2" color="blue-gray" className="font-medium font-alegreya text-[#a55e3f] dark:text-[#C8CBD0] tracking-widest uppercase">
                             {item_name}
                         </Typography>
                         <Typography
                             color="blue-gray"
-                            className="flex items-center gap-1.5 font-normal font-lato text-lg"
+                            className="flex items-center gap-1.5 font-normal font-lato text-lg tracking-widest dark:text-[#C8CBD0]"
                         >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -63,30 +63,30 @@ const ViewDetails = () => {
                             {rating}
                         </Typography>
                     </div>
-                    <Typography variant="h4" color="blue-gray" className="font-medium font-alegreya text-[#a55e3f]">
+                    <Typography variant="h4" color="blue-gray" className="font-medium font-alegreya text-[#a55e3f] dark:text-[#C8CBD0] tracking-widest">
                         $ {price}
                     </Typography>
-                    <Typography color="gray" className="font-lato text-base mt-3">
+                    <Typography color="gray" className="font-lato dark:text-[#C8CBD0] text-base mt-3">
                         {description}
                     </Typography>
-                    <Typography color="gray" className="font-lato text-base mt-3">
-                        <span className="font-alegreya font-medium text-[#a55e3f] text-lg">Category:</span> {subcategory_name}
+                    <Typography color="gray" className="font-lato text-base mt-3 dark:text-[#C8CBD0]">
+                        <span className="font-alegreya font-medium dark:text-[#C8CBD0] tracking-widest text-[#a55e3f] text-lg">Category:</span> {subcategory_name}
                     </Typography>
-                    <Typography color="gray" className="font-lato text-base mt-3">
-                        <span className="font-alegreya font-medium text-[#a55e3f] text-lg">Processing:</span> {processing_time} Working days
+                    <Typography color="gray" className="font-lato text-base mt-3 dark:text-[#C8CBD0]">
+                        <span className="font-alegreya font-medium dark:text-[#C8CBD0] tracking-widest text-[#a55e3f] text-lg">Processing:</span> {processing_time} Working days
                     </Typography>
-                    <Typography color="gray" className="font-lato text-base mt-3">
-                        <span className="font-alegreya font-medium text-[#a55e3f] text-lg">Customization:</span> {customization}
+                    <Typography color="gray" className="font-lato text-base mt-3 dark:text-[#C8CBD0]">
+                        <span className="font-alegreya font-medium dark:text-[#C8CBD0] tracking-widest text-[#a55e3f] text-lg">Customization:</span> {customization}
                     </Typography>
-                    <Typography color="gray" className="font-lato text-base mt-3">
-                        <span className="font-alegreya font-medium text-[#a55e3f] text-lg">Status:</span> {stock_status}
+                    <Typography color="gray" className="font-lato text-base mt-3 dark:text-[#C8CBD0]">
+                        <span className="font-alegreya font-medium dark:text-[#C8CBD0] tracking-widest text-[#a55e3f] text-lg">Status:</span> {stock_status}
                     </Typography>
                     <div className="group mt-8 inline-flex flex-wrap items-center gap-3">
 
                     </div>
                 </CardBody>
                 <CardFooter className="pt-3">
-                    <Button className="rounded-none font-lato bg-[#a55e3f] glass" size="lg" fullWidth={true}>
+                    <Button className="rounded-none font-lato bg-[#a55e3f] dark:bg-[#C8CBD0] dark:text-[#000000] tracking-widest glass" size="lg" fullWidth={true}>
                         Add To Cart
                     </Button>
                 </CardFooter>

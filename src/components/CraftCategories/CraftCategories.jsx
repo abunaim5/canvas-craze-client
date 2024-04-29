@@ -38,7 +38,7 @@ const CraftCategories = () => {
     return (
         <div>
             <div className="text-center mb-16">
-                <h2 className="text-4xl font-semibold">Categories</h2>
+                <h2 className="text-4xl font-semibold tracking-widest uppercase text-[#a55e3f] dark:text-[#C8CBD0]">Categories</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {
@@ -62,9 +62,9 @@ const CraftCategories = () => {
                             </CardHeader>
                             <CardBody className="relative py-14 px-6 md:px-12">
                                 <Typography
-                                    variant="h2"
+                                    // variant="h2"
                                     color="white"
-                                    className="mb-6 font-medium leading-[1.5]"
+                                    className="mb-6 font-medium leading-[1.5] text-2xl tracking-widest font-alegreya uppercase"
                                 >
                                    {category.subcategory_name}
                                 </Typography>

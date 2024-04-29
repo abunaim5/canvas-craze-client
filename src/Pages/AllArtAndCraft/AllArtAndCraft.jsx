@@ -43,17 +43,17 @@ const AllArtAndCraft = () => {
     }
 
     return (
-        <div className="max-w-screen-xl mx-auto mt-28">
-            <Card className="h-full w-full overflow-scroll rounded-none">
-                <table className="w-full min-w-max table-auto text-left">
+        <div className="max-w-screen-xl mx-auto my-28">
+            <Card className="h-full w-full overflow-auto rounded-none bg-transparent">
+                <table className="w-full min-w-max table-auto text-left bg-transparent">
                     <thead>
                         <tr>
                             {TABLE_HEAD.map((head, idx) => (
-                                <th key={idx} className="border-b border-blue-gray-100 bg-blue-gray-50 p-4">
+                                <th key={idx} className="border-b border-blue-gray-100 font-lato dark:text-[#C8CBD0] p-4">
                                     <Typography
                                         variant="small"
                                         color="blue-gray"
-                                        className="font-normal leading-none opacity-70"
+                                        className="font-normal leading-none opacity-70 font-lato dark:text-[#C8CBD0]"
                                     >
                                         {head}
                                     </Typography>
@@ -63,34 +63,34 @@ const AllArtAndCraft = () => {
                     </thead>
                     <tbody>
                         {artAndCrafts.map(({ _id, item_name, subcategory_name, stock_status, price }, index) => (
-                            <tr key={_id} className="even:bg-blue-gray-50/50">
+                            <tr key={_id} className="even:bg-blue-gray-50/50 dark:even:bg-transparent">
                                 <td className="p-4">
-                                    <Typography variant="small" color="blue-gray" className="font-normal">
+                                    <Typography variant="small" color="blue-gray" className="font-normal font-lato dark:text-[#C8CBD0]">
                                         {index + 1}
                                     </Typography>
                                 </td>
                                 <td className="p-4">
-                                    <Typography variant="small" color="blue-gray" className="font-normal">
+                                    <Typography variant="small" color="blue-gray" className="font-normal font-lato dark:text-[#C8CBD0]">
                                         {item_name}
                                     </Typography>
                                 </td>
                                 <td className="p-4">
-                                    <Typography variant="small" color="blue-gray" className="font-normal">
+                                    <Typography variant="small" color="blue-gray" className="font-normal font-lato dark:text-[#C8CBD0]">
                                         {subcategory_name}
                                     </Typography>
                                 </td>
                                 <td className="p-4">
-                                    <Typography variant="small" color="blue-gray" className="font-normal">
+                                    <Typography variant="small" color="blue-gray" className="font-normal font-lato dark:text-[#C8CBD0]">
                                         {stock_status}
                                     </Typography>
                                 </td>
                                 <td className="p-4">
-                                    <Typography variant="small" color="blue-gray" className="font-normal">
+                                    <Typography variant="small" color="blue-gray" className="font-normal font-lato dark:text-[#C8CBD0]">
                                         ${price}
                                     </Typography>
                                 </td>
                                 <td className="p-4">
-                                    <Link to={`/details/${_id}`}><Button onClick={() => handleViewDetails(_id)} className="rounded-none bg-[#a55e3f] glass" fullWidth>Details</Button></Link>
+                                    <Link to={`/details/${_id}`}><Button onClick={() => handleViewDetails(_id)} className="rounded-none font-lato tracking-widest bg-[#a55e3f] dark:bg-[#C8CBD0] dark:text-[#000000] glass" fullWidth>Details</Button></Link>
                                     {/* <Typography as="a" href="#" variant="small" color="blue-gray" className="font-medium">
                                         
                                     </Typography> */}

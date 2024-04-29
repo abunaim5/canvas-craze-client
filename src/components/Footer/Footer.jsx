@@ -23,7 +23,7 @@ const Footer = () => {
             <footer className="relative w-full">
                 <div className="mx-auto w-full max-w-screen-xl py-16 px-4">
                     <div className="grid grid-cols-1 justify-between gap-4 md:grid-cols-2">
-                        <Typography className="mb-6 font-alegreya text-2xl font-semibold text-[#a55e3f]">
+                        <Typography className="mb-6 font-alegreya text-3xl font-semibold text-[#a55e3f]">
                             CanvasCraze
                         </Typography>
                         <div className="grid grid-cols-3 justify-between gap-4">

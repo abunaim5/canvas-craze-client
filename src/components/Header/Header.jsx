@@ -136,7 +136,7 @@ function ProfileMenu({ user, logOutUser }) {
     const closeMenu = () => setIsMenuOpen(false);
 
     return (
-        <Menu open={isMenuOpen} handler={setIsMenuOpen} placement="bottom-end">
+        <Menu open={isMenuOpen} handler={setIsMenuOpen} placement="bottom-end" >
             <MenuHandler>
                 <Button
                     variant="text"
@@ -156,7 +156,7 @@ function ProfileMenu({ user, logOutUser }) {
                     />
                 </Button>
             </MenuHandler>
-            <MenuList className="p-1">
+            <MenuList className="p-1 rounded-none mt-[17px]">
                 {profileMenuItems.map(({ label, icon }, key) => {
                     const displayName = key === profileMenuItems.length - 6;
                     const isLastItem = key === profileMenuItems.length - 1;
@@ -170,13 +170,13 @@ function ProfileMenu({ user, logOutUser }) {
                                 }`}
                         >
                             {React.createElement(icon, {
-                                className: `h-4 w-4 ${isLastItem ? "text-red-500" : ""}`,
+                                className: `h-4 w-4 text-[#a55e3f] ${isLastItem ? "text-red-500" : ""}`,
                                 strokeWidth: 2,
                             })}
                             <Typography
                                 as="span"
                                 variant="small"
-                                className="font-normal"
+                                className="font-semibold text-xs font-lato text-[#000000] uppercase tracking-widest"
                                 color={isLastItem ? "red" : "inherit"}
                             >
                                 {displayName ? user?.displayName : label}
@@ -235,7 +235,7 @@ function NavListMenu() {
                 <MenuHandler>
                     <Typography as="div" variant="small" className="font-medium">
                         <ListItem
-                            className="flex items-center gap-2 py-2 pr-4 font-medium text-gray-900 dark:text-[#C8CBD0] font-lato rounded-none"
+                            className="flex items-center gap-2 py-2 pr-4 text-xs font-semibold text-[#a55e3f] tracking-widest dark:text-[#C8CBD0] font-lato rounded-none uppercase"
                             selected={isMenuOpen || isMobileMenuOpen}
                             onClick={() => setIsMobileMenuOpen((cur) => !cur)}
                         >
@@ -253,7 +253,7 @@ function NavListMenu() {
                         </ListItem>
                     </Typography>
                 </MenuHandler>
-                <MenuList className="hidden max-w-screen-xl rounded-xl lg:block">
+                <MenuList className="hidden max-w-screen-xl rounded-none mt-[6px] lg:block">
                     <ul className="grid grid-cols-3 gap-y-2 outline-none outline-0">
                         {renderItems}
                     </ul>
@@ -271,12 +271,12 @@ function NavList() {
     // console.log(currentUser)
 
     const links = <>
-        <NavLink to='/'><ListItem className="flex items-center gap-2 py-2 pr-4 text-sm font-lato rounded-none dark:text-[#C8CBD0]">Home</ListItem></NavLink>
-        <NavLink to='/allArtAndCraft'><ListItem className="flex items-center gap-2 py-2 pr-4 text-sm font-lato rounded-none dark:text-[#C8CBD0]">All Art & Craft</ListItem></NavLink>
+        <NavLink to='/'><ListItem className="flex items-center gap-2 py-2 pr-4 text-xs font-semibold text-[#a55e3f] tracking-widest font-lato rounded-none dark:text-[#C8CBD0] uppercase">Home</ListItem></NavLink>
+        <NavLink to='/allArtAndCraft'><ListItem className="flex items-center gap-2 py-2 pr-4 text-xs font-semibold text-[#a55e3f] tracking-widest font-lato rounded-none dark:text-[#C8CBD0] uppercase">All Art & Craft</ListItem></NavLink>
         <NavListMenu />
-        <NavLink to='/addCraft'><ListItem className="flex items-center gap-2 py-2 pr-4 text-sm font-lato rounded-none dark:text-[#C8CBD0]">Add Craft Item</ListItem></NavLink>
-        <NavLink to='/myCrafts'><ListItem className="flex items-center gap-2 py-2 pr-4 text-sm font-lato rounded-none dark:text-[#C8CBD0]">My Art & Craft List</ListItem></NavLink>
-        <NavLink><ListItem className="flex items-center gap-2 py-2 pr-4 text-sm font-lato rounded-none dark:text-[#C8CBD0]">Contact Us</ListItem></NavLink>
+        <NavLink to='/addCraft'><ListItem className="flex items-center gap-2 py-2 pr-4 text-xs font-semibold text-[#a55e3f] tracking-widest font-lato rounded-none dark:text-[#C8CBD0] uppercase">Add Craft Item</ListItem></NavLink>
+        <NavLink to='/myCrafts'><ListItem className="flex items-center gap-2 py-2 pr-4 text-xs font-semibold text-[#a55e3f] tracking-widest font-lato rounded-none dark:text-[#C8CBD0] uppercase">My Art & Craft List</ListItem></NavLink>
+        <NavLink><ListItem className="flex items-center gap-2 py-2 pr-4 text-xs font-semibold text-[#a55e3f] tracking-widest font-lato rounded-none dark:text-[#C8CBD0] uppercase">Contact Us</ListItem></NavLink>
     </>
 
     return (
@@ -300,9 +300,9 @@ const Header = () => {
 
     return (
         <div>
-            <Navbar className="mx-auto max-w-screen-xl px-4 py-2 bg-transparent backdrop-saturate-100 backdrop-blur-none border-none bg-opacity-0 shadow-none">
+            <Navbar className="mx-auto max-w-full px-8 py-4 bg-transparent backdrop-saturate-100 backdrop-blur-none bg-opacity-0 shadow-none border-b-2 border-dashed border-x-0 border-t-0 border-b-[#a55e3f] dark:border-b-[#C8CBD0] rounded-none">
                 <div className="flex items-center justify-between text-blue-gray-900">
-                    <Link to='/'><h1 className="mr-4 cursor-pointer py-1.5 lg:ml-2 text-2xl font-bold text-[#a55e3f] dark:text-[#C8CBD0]">CanvasCraze</h1></Link>
+                    <Link to='/'><h1 className="mr-4 cursor-pointer py-1.5 lg:ml-2 text-2xl md:text-3xl font-semibold text-[#a55e3f] dark:text-[#C8CBD0]">CanvasCraze</h1></Link>
                     <div className="hidden lg:block">
                         <NavList />
                     </div>
@@ -310,10 +310,10 @@ const Header = () => {
                         <div>
                             {
                                 user ? <ProfileMenu user={user} logOutUser={logOutUser} /> : <div className="hidden gap-2 lg:flex">
-                                    <Link to='/login'><Button className="rounded-none font-lato hover:glass" variant="text" size="sm" color="blue-gray">
+                                    <Link to='/login'><Button className="rounded-none tracking-widest font-lato hover:glass text-[#a55e3f] dark:text-[#C8CBD0]" variant="text" size="sm" >
                                         Log In
                                     </Button></Link>
-                                    <Link to='/signUp'><Button className="rounded-none font-lato bg-[#a55e3f] glass" size="sm">
+                                    <Link to='/signUp'><Button className="rounded-none tracking-widest font-lato bg-[#a55e3f] dark:bg-[#C8CBD0] dark:text-[#000000] glass" size="sm">
                                         Sign Up
                                     </Button></Link>
                                 </div>

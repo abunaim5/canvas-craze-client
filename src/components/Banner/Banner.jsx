@@ -5,7 +5,7 @@ const Banner = () => {
     return (
         <div>
             <Carousel
-            className=""
+            // className="max-h-[calc(100vh-82px)] overflow-hidden"
             autoplay={true}
             loop={true}
             navigation={({ setActiveIndex, activeIndex, length }) => (
@@ -45,10 +45,10 @@ const Banner = () => {
                                  Explore a world of artistic possibilities with CanvasCraze. From premium canvases to vibrant paints, we have everything you need to bring your imagination to life.
                             </Typography>
                             <div className="flex justify-center gap-2">
-                                <Button className="rounded-none font-lato bg-[#a55e3f] glass text-white" size="lg" color="white">
+                                <Button className="rounded-none font-lato tracking-widest bg-[#a55e3f] glass text-white" size="lg" color="white">
                                     Explore
                                 </Button>
-                                <Button className="rounded-none font-lato hover:glass" size="lg" color="white" variant="text">
+                                <Button className="rounded-none font-lato tracking-widest hover:glass" size="lg" color="white" variant="text">
                                     Gallery
                                 </Button>
                             </div>
@@ -78,10 +78,10 @@ const Banner = () => {
                                  Elevate your artistic endeavors with CanvasCraze. Discover high-quality brushes, sketchbooks, and drawing tools designed to inspire and empower artists of all levels.
                             </Typography>
                             <div className="flex justify-center gap-2">
-                                <Button className="rounded-none font-lato bg-[#a55e3f] glass text-white" size="lg" color="white">
+                                <Button className="rounded-none font-lato tracking-widest bg-[#a55e3f] glass text-white" size="lg" color="white">
                                     Explore
                                 </Button>
-                                <Button className="rounded-none font-lato hover:glass" size="lg" color="white" variant="text">
+                                <Button className="rounded-none font-lato tracking-widest hover:glass" size="lg" color="white" variant="text">
                                     Gallery
                                 </Button>
                             </div>
@@ -111,10 +111,10 @@ const Banner = () => {
                                   Dive into a realm of inspiration with CanvasCraze. Browse our curated collection of painting and drawing supplies, and embark on a journey of self-expression and creativity.
                             </Typography>
                             <div className="flex justify-center gap-2">
-                                <Button className="rounded-none font-lato bg-[#a55e3f] glass text-white" size="lg" color="white">
+                                <Button className="rounded-none font-lato tracking-widest bg-[#a55e3f] glass text-white" size="lg" color="white">
                                     Explore
                                 </Button>
-                                <Button className="rounded-none font-lato hover:glass" size="lg" color="white" variant="text">
+                                <Button className="rounded-none font-lato tracking-widest hover:glass" size="lg" color="white" variant="text">
                                     Gallery
                                 </Button>
                             </div>

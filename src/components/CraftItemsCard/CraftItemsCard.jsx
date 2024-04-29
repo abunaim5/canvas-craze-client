@@ -15,7 +15,7 @@ const CraftItemsCard = ({craftItem, handleViewDetails}) => {
 
     return (
         <div>
-            <Card className="glass rounded-none">
+            <Card className="rounded-none dark:bg-[#0F172A] dark:text-[#C8CBD0]">
                 <CardHeader shadow={false} floated={false} className="h-96 m-0 rounded-none">
                     <img
                         src={photo}
@@ -25,17 +25,17 @@ const CraftItemsCard = ({craftItem, handleViewDetails}) => {
                 </CardHeader>
                 <CardBody>
                     <div className="mb-2 flex items-center justify-between">
-                        <Typography color="blue-gray" className="font-medium text-2xl font-alegreya text-[#a55e3f]">
+                        <Typography color="blue-gray" className="font-semibold text-base font-alegreya text-[#a55e3f] dark:text-[#C8CBD0] tracking-widest uppercase">
                             {item_name}
                         </Typography>
-                        <Typography color="blue-gray" className="font-medium font-alegreya text-xl text-[#a55e3f]">
+                        <Typography color="blue-gray" className="font-medium font-alegreya text-base text-[#a55e3f] dark:text-[#C8CBD0]">
                             $ {price}
                         </Typography>
                     </div>
                     <Typography
                         variant="small"
                         color="gray"
-                        className="font-normal opacity-75 text-pretty"
+                        className="font-normal font-lato opacity-75 text-pretty"
                     >
                         {description}
                     </Typography>
@@ -45,7 +45,7 @@ const CraftItemsCard = ({craftItem, handleViewDetails}) => {
                         onClick={() => handleViewDetails(_id)}
                         ripple={false}
                         fullWidth={true}
-                        className="bg-blue-gray-900/10 text-white font-lato shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100 rounded-none bg-[#a55e3f] glass"
+                        className="bg-blue-gray-900/10 text-white font-lato shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100 rounded-none dark:bg-[#C8CBD0] dark:text-[#000000] bg-[#a55e3f] glass tracking-widest"
                     >
                         View Details
                     </Button></Link>

@@ -14,7 +14,7 @@ const CraftItems = () => {
     return (
         <div>
             <div className="text-center mb-16">
-                <h1 className="text-4xl font-semibold">Arts & Craft Items</h1>
+                <h1 className="text-4xl font-semibold tracking-widest uppercase text-[#a55e3f] dark:text-[#C8CBD0]">Art & Craft Items</h1>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {
