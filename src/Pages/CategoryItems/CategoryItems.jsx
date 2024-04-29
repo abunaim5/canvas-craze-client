@@ -56,9 +56,30 @@ const CategoryItems = () => {
                             <Typography
                                 variant="small"
                                 color="gray"
-                                className="font-normal opacity-75 text-pretty"
+                                className="font-normal font-lato opacity-75 text-pretty mb-2"
                             >
                                 {item.description}
+                            </Typography>
+                            <Typography
+                                variant="small"
+                                color="gray"
+                                className="font-normal font-lato opacity-75 text-pretty"
+                            >
+                                <span className="font-alegreya font-medium text-[#a55e3f] text-lg">Rating: </span>{item.rating}
+                            </Typography>
+                            <Typography
+                                variant="small"
+                                color="gray"
+                                className="font-normal font-lato opacity-75 text-pretty"
+                            >
+                                <span className="font-alegreya font-medium text-[#a55e3f] text-lg">Category: </span>{item.subcategory_name}
+                            </Typography>
+                            <Typography
+                                variant="small"
+                                color="gray"
+                                className="font-normal font-lato opacity-75 text-pretty"
+                            >
+                                <span className="font-alegreya font-medium text-[#a55e3f] text-lg">Processing: </span>{item.processing_time} Business days
                             </Typography>
                         </CardBody>
                         <CardFooter className="pt-0">

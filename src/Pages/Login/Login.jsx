@@ -64,7 +64,7 @@ const Login = () => {
         .then(() => {
             Swal.fire({
                 title: "Success",
-                text: "Signed in successfully with Google",
+                text: "Signed in successfully with Github",
                 icon: "success"
             });
         })
