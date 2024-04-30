@@ -57,13 +57,13 @@ const MyArtAndCrafts = () => {
                 })
                     .then(res => res.json())
                     .then(() => {
+                        const remaining = myCrafts.filter(myCraft => myCraft._id !== id)
+                        setFilteredCrafts(remaining)
                         Swal.fire({
                             title: "Deleted!",
                             text: "Your file has been deleted.",
                             icon: "success"
                         });
-                        const remaining = myCrafts.filter(myCraft => myCraft._id !== id)
-                        setMyCrafts(remaining);
                     })
             }
         });
@@ -74,11 +74,11 @@ const MyArtAndCrafts = () => {
             const customizable = myCrafts.filter(myCraft => myCraft.customization === 'Yes')
             setFilteredCrafts(customizable);
         }
-        else if(query === 'No'){
+        else if (query === 'No') {
             const nonCustomizable = myCrafts.filter(myCraft => myCraft.customization === 'No');
             setFilteredCrafts(nonCustomizable);
         }
-        else if(query === 'Custom'){
+        else if (query === 'Custom') {
             setFilteredCrafts(myCrafts);
         }
     }

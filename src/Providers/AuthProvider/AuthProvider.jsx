@@ -9,7 +9,7 @@ const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
     const [categoryName, setCategoryName] = useState('')
-    console.log(categoryName);
+    // console.log(categoryName);
     const googleProvider = new GoogleAuthProvider();
     const githubProvider = new GithubAuthProvider();
 

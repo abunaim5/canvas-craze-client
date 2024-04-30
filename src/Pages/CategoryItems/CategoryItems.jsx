@@ -13,8 +13,8 @@ import { Link } from "react-router-dom";
 const CategoryItems = () => {
     const { categoryName } = useContext(AuthContext);
     const [categoryItems, setCategoryItems] = useState([]);
-    console.log(categoryItems);
-    console.log(categoryName);
+    // console.log(categoryItems);
+    // console.log(categoryName);
 
     useEffect(() => {
         fetch(`https://canvas-craze-server.vercel.app/categoryItems/${categoryName}`)

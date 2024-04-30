@@ -28,7 +28,7 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home></Home>,
-        loader: () => fetch('https://canvas-craze-server.vercel.app/craftItems')
+        loader: () => fetch('https://canvas-craze-server.vercel.app/craftItemsLimit')
       },
       {
         path: '/login',
@@ -40,7 +40,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/addCraft',
-        element: <AddCraftItem></AddCraftItem>
+        element: <PrivateRoute><AddCraftItem></AddCraftItem></PrivateRoute>
       },
       {
         path: '/allArtAndCraft',

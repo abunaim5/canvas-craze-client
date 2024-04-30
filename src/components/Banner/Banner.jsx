@@ -57,7 +57,7 @@ const Banner = () => {
                 </div>
                 <div className="relative h-full w-full">
                     <img
-                        src="https://i.postimg.cc/255mynHr/landscape-7455387-1920.jpg"
+                        src="https://i.postimg.cc/x83fx8C4/ai-generated-8686344-1920.jpg"
                         alt="image 1"
                         className="h-full w-full object-cover"
                     />
@@ -90,7 +90,7 @@ const Banner = () => {
                 </div>
                 <div className="relative h-full w-full">
                     <img
-                        src="https://i.postimg.cc/255mynHr/landscape-7455387-1920.jpg"
+                        src="https://i.postimg.cc/v8fcxHQ9/ai-generated-8334670-1920.jpg"
                         alt="image 1"
                         className="h-full w-full object-cover"
                     />
