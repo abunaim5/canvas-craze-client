@@ -10,7 +10,8 @@ const ErrorPage = () => {
             <div>
                 <Lottie
                     animationData={error404}
-                    style={{height: 850}}
+                    // style={{height: 850}}
+                    className="h-[calc(100vh-82px)]"
                 ></Lottie>
             </div>
             <Footer></Footer>

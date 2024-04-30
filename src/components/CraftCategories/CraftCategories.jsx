@@ -39,6 +39,7 @@ const CraftCategories = () => {
         <div>
             <div className="text-center mb-16">
                 <h2 className="text-4xl font-semibold tracking-widest uppercase text-[#a55e3f] dark:text-[#C8CBD0]">Categories</h2>
+                <p className="dark:text-[#C8CBD0] mt-8 font-lato">Explore our diverse range of artistic categories, each designed to inspire and ignite your creativity. From the picturesque landscapes of landscape painting to the intimate portraits of portrait drawing, and the vibrant hues of watercolor painting to the timeless elegance of oil painting, our curated categories offer something for every artist and enthusiast.</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {

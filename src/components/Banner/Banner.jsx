@@ -5,7 +5,7 @@ const Banner = () => {
     return (
         <div>
             <Carousel
-            // className="max-h-[calc(100vh-82px)] overflow-hidden"
+            className="h-[calc(100vh-82px)]"
             autoplay={true}
             loop={true}
             navigation={({ setActiveIndex, activeIndex, length }) => (

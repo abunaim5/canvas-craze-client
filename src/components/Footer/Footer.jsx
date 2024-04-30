@@ -2,12 +2,12 @@ import { Typography } from "@material-tailwind/react";
 
 const LINKS = [
     {
-        title: "Product",
-        items: ["Overview", "Features", "Solutions", "Tutorials"],
-    },
-    {
         title: "Company",
         items: ["About us", "Careers", "Press", "News"],
+    },
+    {
+        title: "Product",
+        items: ["Overview", "Features", "Solutions", "Tutorials"],
     },
     {
         title: "Resource",
@@ -23,9 +23,18 @@ const Footer = () => {
             <footer className="relative w-full">
                 <div className="mx-auto w-full max-w-screen-xl py-16 px-4">
                     <div className="grid grid-cols-1 justify-between gap-4 md:grid-cols-2">
-                        <Typography className="mb-6 font-alegreya text-3xl font-semibold text-[#a55e3f]">
-                            CanvasCraze
-                        </Typography>
+                        <div className="mb-6">
+                            <Typography className="mb-2 font-alegreya text-3xl font-semibold text-[#a55e3f]">
+                                CanvasCraze
+                            </Typography>
+                            <p className="font-light text-base font-lato text-[#000000] mb-6 max-w-[410px]">Explore, create, and connect with our community of artists and enthusiasts. Stay updated on the latest trends, promotions, and events.</p>
+                            <div className="font-lato font-light text-base text-[#000000]">
+                                <h2 className="text-2xl font-semibold text-[#a55e3f] font-alegreya mb-2 opacity-90">Get In Touch</h2>
+                                <p className="">Location : Art Center, New York City.</p>
+                                <p className="">Phone : +62-864-349-1</p>
+                                <p className="">Email : canvas.craze@domain.com</p>
+                            </div>
+                        </div>
                         <div className="grid grid-cols-3 justify-between gap-4">
                             {LINKS.map(({ title, items }) => (
                                 <ul key={title}>
