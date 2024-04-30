@@ -13,3 +13,7 @@ CanvasCraze is your ultimate destination for all things art and craft, specializ
 - **Customer Satisfaction**: Enjoy a seamless shopping experience with secure transactions, fast shipping, and dedicated customer support to assist you every step of the way.
 
 ## Selected Category: Painting and Drawing
+
+##  Packages:
+- **Lottie React**
+- **React Simple Typewriter**
