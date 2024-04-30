@@ -1,10 +1,19 @@
+import Lottie from "lottie-react";
+import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
+import error404 from '../../../public/lotties/error404.json'
 
 const ErrorPage = () => {
     return (
-        <div>
+        <div className="dark:bg-[#0F172A]">
             <Header></Header>
-            <h1>This is error Page</h1>
+            <div>
+                <Lottie
+                    animationData={error404}
+                    style={{height: 850}}
+                ></Lottie>
+            </div>
+            <Footer></Footer>
         </div>
     );
 };
