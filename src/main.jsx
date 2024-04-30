@@ -49,7 +49,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/details/:id',
-        element: <ViewDetails></ViewDetails>,
+        element: <PrivateRoute><ViewDetails></ViewDetails></PrivateRoute>,
         loader: ({ params }) => fetch(`https://canvas-craze-server.vercel.app/craftItems/${params.id}`)
       },
       {
@@ -58,7 +58,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/updateCraft/:id',
-        element: <UpdateCraftDetails></UpdateCraftDetails>,
+        element: <PrivateRoute><UpdateCraftDetails></UpdateCraftDetails></PrivateRoute>,
         loader: ({params}) => fetch(`https://canvas-craze-server.vercel.app/craftItems/${params.id}`)
       },
       {

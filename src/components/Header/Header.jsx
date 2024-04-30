@@ -266,7 +266,7 @@ function NavListMenu() {
     );
 }
 
-function NavList() {
+function NavList({user}) {
     // const {user} = useContext(AuthContext);
     // console.log(currentUser)
 
@@ -275,7 +275,9 @@ function NavList() {
         <NavLink to='/allArtAndCraft'><ListItem className="flex items-center gap-2 py-2 pr-4 text-xs font-semibold text-[#a55e3f] tracking-widest font-lato rounded-none dark:text-[#C8CBD0] uppercase">All Art & Craft</ListItem></NavLink>
         <NavListMenu />
         <NavLink to='/addCraft'><ListItem className="flex items-center gap-2 py-2 pr-4 text-xs font-semibold text-[#a55e3f] tracking-widest font-lato rounded-none dark:text-[#C8CBD0] uppercase">Add Craft Item</ListItem></NavLink>
-        <NavLink to='/myCrafts'><ListItem className="flex items-center gap-2 py-2 pr-4 text-xs font-semibold text-[#a55e3f] tracking-widest font-lato rounded-none dark:text-[#C8CBD0] uppercase">My Art & Craft List</ListItem></NavLink>
+        {
+            user && <NavLink to='/myCrafts'><ListItem className="flex items-center gap-2 py-2 pr-4 text-xs font-semibold text-[#a55e3f] tracking-widest font-lato rounded-none dark:text-[#C8CBD0] uppercase">My Art & Craft List</ListItem></NavLink>
+        }
         <NavLink><ListItem className="flex items-center gap-2 py-2 pr-4 text-xs font-semibold text-[#a55e3f] tracking-widest font-lato rounded-none dark:text-[#C8CBD0] uppercase">Contact Us</ListItem></NavLink>
     </>
 
@@ -304,7 +306,7 @@ const Header = () => {
                 <div className="flex items-center justify-between text-blue-gray-900">
                     <Link to='/'><h1 className="mr-4 cursor-pointer py-1.5 lg:ml-2 text-2xl md:text-3xl font-semibold text-[#a55e3f] dark:text-[#C8CBD0]">CanvasCraze</h1></Link>
                     <div className="hidden lg:block">
-                        <NavList />
+                        <NavList user={user} />
                     </div>
                     <div className="flex items-center gap-2">
                         <div>
@@ -354,7 +356,10 @@ const Header = () => {
 
 ProfileMenu.propTypes = {
     user: PropTypes.object.isRequired,
-    logOutUser: PropTypes.func.isRequired
+    logOutUser: PropTypes.func.isRequired,
+}
+NavList.propTypes = {
+    user: PropTypes.object.isRequired,
 }
 
 export default Header;

@@ -84,7 +84,7 @@ const MyArtAndCrafts = () => {
     }
 
     return (
-        <div className="max-w-screen-xl mx-auto mt-28">
+        <div className="max-w-screen-xl mx-auto my-28">
             <div className="flex justify-center">
                 <Menu
                     animate={{
@@ -93,16 +93,16 @@ const MyArtAndCrafts = () => {
                     }}
                 >
                     <MenuHandler>
-                        <Button className="rounded-none">Filter by Customization</Button>
+                        <Button className="rounded-none glass font-lato bg-[#a55e3f] dark:bg-[#C8CBD0] dark:text-[#000000] tracking-widest">Filter by Customization</Button>
                     </MenuHandler>
-                    <MenuList className="">
+                    <MenuList className="rounded-none dark:bg-[#C8CBD0] dark:text-[#000000] font-lato">
                         <MenuItem onClick={() => handleFilterByCustomization('Custom')} className="text-center">Custom</MenuItem>
                         <MenuItem onClick={() => handleFilterByCustomization('Yes')} className="text-center">Yes</MenuItem>
                         <MenuItem onClick={() => handleFilterByCustomization('No')} className="text-center">No</MenuItem>
                     </MenuList>
                 </Menu>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-16">
                 {
                     filteredCrafts?.map(myCraft => <MyArtAndCraftCard
                         key={myCraft._id}
