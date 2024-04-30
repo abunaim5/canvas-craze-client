@@ -14,7 +14,7 @@ import Swal from "sweetalert2";
 
 const Login = () => {
     const [showPass, setShowPass] = useState(false);
-    const { loginUser, googleLogin, githubLogin } = useContext(AuthContext);
+    const { loginUser, googleLogin, githubLogin, setLoading } = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
 
@@ -58,7 +58,10 @@ const Login = () => {
             navigate(location.state ? location.state : '/')
         })
         .catch(error => {
-            console.error(error);
+            // if(error){
+            //     setLoading(false);
+            // }
+            console.error(error.massage);
         })
     }
 
@@ -73,6 +76,9 @@ const Login = () => {
             navigate(location.state ? location.state : '/')
         })
         .catch(error => {
+            // if(error){
+            //     setLoading(false);
+            // }
             console.error(error);
         })
     }
