@@ -42,6 +42,7 @@ import { AuthContext } from "../../Providers/AuthProvider/AuthProvider";
 import PropTypes from 'prop-types';
 import Swal from "sweetalert2";
 import Switcher from "../Switcher/Switcher";
+import LoaderSpinner from "../LoaderSpinner/LoaderSpinner";
 
 const profileMenuItems = [
     {
@@ -289,7 +290,7 @@ function NavList() {
 }
 
 const Header = () => {
-    const { user, logOutUser } = useContext(AuthContext);
+    const { user, logOutUser, loading } = useContext(AuthContext);
 
     const [openNav, setOpenNav] = React.useState(false);
 
@@ -299,6 +300,10 @@ const Header = () => {
             () => window.innerWidth >= 960 && setOpenNav(false),
         );
     }, []);
+
+    if(loading){
+        return <LoaderSpinner></LoaderSpinner>
+    }
 
     return (
         <div>

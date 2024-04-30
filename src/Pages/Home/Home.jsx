@@ -5,12 +5,17 @@ import CraftItems from "../../components/CraftItems/CraftItems";
 import CraftCategories from "../../components/CraftCategories/CraftCategories";
 import ArtistSpotlight from "../../components/ArtistSpotlight/ArtistSpotlight";
 import Counting from "../../components/Counting/Counting";
+import LoaderSpinner from "../../components/LoaderSpinner/LoaderSpinner";
 
 const Home = () => {
     const { loading } = useContext(AuthContext)
     if (loading) {
-        return <h1>Loading.....</h1>
+        return <LoaderSpinner></LoaderSpinner>
     }
+    setTimeout(() => {
+        
+    }, 3000)
+
 
     return (
         <div>
