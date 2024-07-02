@@ -14,6 +14,51 @@ CanvasCraze is your ultimate destination for all things art and craft, specializ
 
 ## Selected Category: Painting and Drawing
 
+
 ##  Packages:
 - **Lottie React**
 - **React Simple Typewriter**
+
+## Technologies Used
+
+- HTML
+- CSS
+- JavaScript
+- React
+- Node.js
+- Express
+- MongoDB
+
+## Steps to Clone and Run the Project Locally
+
+### Steps to Run Locally:
+
+1. **Clone the repository:**
+
+    ```bash
+    git clone <repository-url>
+    ```
+
+2. **Navigate to the repository:**
+
+    ```bash
+    cd <repository-folder>
+    ```
+
+3. **Install dependencies:**
+
+    ```bash
+    npm install
+    ```
+
+4. **Configure environment variables:** Create a `.env` file and add the necessary configurations.
+
+5. **Start the development server:**
+
+    ```bash
+    npm start
+    ```
+
+6. **View the application in the browser:**
+
+    Open `http://localhost:3000` in your browser.
